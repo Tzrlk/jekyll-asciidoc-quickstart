@@ -8,6 +8,8 @@ exclude:
   - Rakefile
 include:
   - .travis.yml
+keep_files:
+  - CNAME
 asciidoc: {}
 asciidoctor:
   base_dir: :docdir
