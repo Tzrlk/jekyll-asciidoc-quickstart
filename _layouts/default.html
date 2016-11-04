@@ -3,18 +3,19 @@
 <html class="lt-ie10" lang="en"> <![endif]-->
 <html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{page.title}}</title>
-    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="author" content="Your name goes here">
-    <meta name="copyright" content="Maybe consider a Creative Commons license">
-    <link rel="stylesheet" href="{{page.root}}css/foundation.css">
-    <link rel="stylesheet" href="{{page.root}}css/font-awesome.css">
-    <link rel="stylesheet" href="{{page.root}}css/coderay.css">
-    <link rel="stylesheet" href="{{page.root}}css/asciidoctor.css">
-    <script src="{{page.root}}js/vendor/modernizr.js"></script>
-    <script src="{{page.root}}js/toc.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{page.title}}</title>
+	<meta name="description"
+	      content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+	<meta name="author" content="Peter Cummuskey">
+	<meta name="copyright" content="Peter Cummuskey 2016">
+	<link rel="stylesheet" href="{{page.root}}css/foundation.css">
+	<link rel="stylesheet" href="{{page.root}}css/font-awesome.css">
+	<link rel="stylesheet" href="{{page.root}}css/coderay.css">
+	<link rel="stylesheet" href="{{page.root}}css/asciidoctor.css">
+	<script src="{{page.root}}js/vendor/modernizr.js"></script>
+	<script src="{{page.root}}js/toc.js"></script>
 </head>
 <body>
 
@@ -22,15 +23,15 @@
 <!-- Nav Bar -->
 
 <nav class="top-bar" data-topbar>
-    <ul class="title-area">
-        <!-- Title Area -->
-        <li class="name">
-            <h1>
-                <a href="{{page.root}}">{{site.title}}</a>
-            </h1>
-        </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-    </ul>
+	<ul class="title-area">
+		<!-- Title Area -->
+		<li class="name">
+			<h1>
+				<a href="{{page.root}}">{{site.title}}</a>
+			</h1>
+		</li>
+		<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+	</ul>
 </nav>
 <!-- End Nav -->
 
@@ -39,36 +40,35 @@
 
 <div class="row">
 
-    <!-- Main Blog Content -->
-    <div class="large-9 columns" role="content">
+	<!-- Main Blog Content -->
+	<div class="large-9 columns" role="content">
 
-        {{ content }}
+		{{ content }}
 
-    </div>
+	</div>
 
-    <!-- End Main Content -->
+	<!-- End Main Content -->
 
-    <!-- Sidebar -->
+	<!-- Sidebar -->
 
-    <aside class="large-3 columns">
+	<aside class="large-3 columns">
 
-        <h4>Posts</h4>
-        <ul id="posts" class="posts nav">
-            {% for post in site.posts limit: 5 %}
-            <li><a href=".{{ post.url }}">{{ post.navtitle }}</a></li>
-            {% endfor %}
-        </ul>
+		<h4>Posts</h4>
+		<ul id="posts" class="posts nav">
+			{% for post in site.posts limit: 5 %}
+			<li><a href=".{{ post.url }}">{{ post.navtitle }}</a></li>
+			{% endfor %}
+		</ul>
 
-        <div class="panel">
-            <h5>Featured</h5>
+		<div class="panel">
+			<h5>Featured</h5>
 
-            <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon
-                nulla pork belly cupidatat meatloaf cow.</p>
-        </div>
+			<p><!-- put widgets here or something --></p>
+		</div>
 
-    </aside>
+	</aside>
 
-    <!-- End Sidebar -->
+	<!-- End Sidebar -->
 </div>
 
 <!-- End Main Content and Sidebar -->
@@ -77,22 +77,26 @@
 <!-- Footer -->
 
 <footer class="row">
-    <div class="large-12 columns">
-        <hr>
-        <div class="row">
-            <div class="large-12 columns">
-                <p>Footer</p>
-            </div>
-        </div>
-    </div>
+	<div class="large-12 columns">
+		<hr/>
+		<div class="row">
+			<div class="large-12 columns">
+				<p>
+					<a href="http://aetheric.co.nz/">Aetheric Engineering</a>
+					<span>/</span>
+					<span>Tzrlk</span>
+				</p>
+			</div>
+		</div>
+	</div>
 </footer>
 
 <script src="{{page.root}}js/vendor/jquery.js"></script>
 <script src="{{page.root}}js/foundation.min.js"></script>
 <script>
-$(document).foundation();
-var doc = document.documentElement;
-doc.setAttribute('data-useragent', navigator.userAgent);
+	$(document).foundation();
+	var doc = document.documentElement;
+	doc.setAttribute('data-useragent', navigator.userAgent);
 </script>
 </body>
 </html>
