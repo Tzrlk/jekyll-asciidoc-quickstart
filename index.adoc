@@ -61,7 +61,7 @@
 	],
 	"nationality": {
 		"@type": "Country",
-		"name": "New Zealand",
+		"name": "New Zealand"
 	},
 	"parent": [
 		{
