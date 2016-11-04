@@ -9,6 +9,7 @@ exclude:
 include:
   - .travis.yml
 keep_files:
+  - .git
   - CNAME
 asciidoc: {}
 asciidoctor:
