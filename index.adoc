@@ -4,9 +4,12 @@
 :page-title: Tzrlk
 :page-description: My personal site
 
+== Latest Article
+
+( Bear with me a little bit, I'm still working out how to make jekyll and liquid do what I want. )
+
 == About
 image::https://lh3.googleusercontent.com/kvsq3qsAkU21M12oDNdJZyRiJ_ayASr0g1F8nXU2SyGcoN9sODTZDyCz8s3G7PInyvbdoUsb80r2HeDda0GqLbZHUg0h1eqD5zCb4nAnhbhaQ5EV0WxRsYTRsjWFVgMUpfeDMJ1TIpr-j4L8f1ZFdhhHsUwBN-r0pBCUboWL_gAWFJvZK2-gCxwrXUhgDwIPYG48tAp1cMdhuQyPtNfdb_PLpgF9lhd_9y6EYfqNcaQjYn_hQa0pYD3Xw4KFK9gZiFMqNapjV_RcgOPS9jEozHngSKykQGgPGQem1LJ2Ja-WoqcMdzu3K_7HDq6q9xEbuSfdjfSp6FX76sdJE0Dib1G6FDxAsqGmTSXVFdj261OkCHO1Q1U-tDu4jYyQB3tFIWhtj-T4qzmnvCsa_5k6igikmmHrTRheoLTJKV7Ing4naV1auJnKyoGvtCFRiPrSsh_3r5LykA0suG7EMgKR5PvHtoq9foSWDgbcDaUHI6qFkW1TQ0r90jQDS2eW4Ho29JOIVvxJHCRSRWI7VGMnGhCt0KNLgbk7-CxhtiqFndKqlDXo-okD75S15Dz6_h8ZfMYiBjmjyL7JzpLqIG80lORaNOmEzlKpz4TezNCaRPEtcBGu=w597-h925-no["Peter Cummuskey",height=150,width=100,float="right"]
-unfloat::[]
 
 I'm a software engineer working on all sorts of cool stuff. I'm a seasoned Java developer, and have recently seen the miracles of Kotlin. I love coding in NodeJS, and Angular, etc. for some bizarre reason. Finally, I've been experimenting with Docker, Puppet, and Rust here and abouts.
 
