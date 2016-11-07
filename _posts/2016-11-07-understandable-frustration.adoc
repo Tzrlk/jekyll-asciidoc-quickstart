@@ -3,6 +3,7 @@
 :page-navtitle: Understandable Frustration
 :page-root: ../../../
 :page-excerpt: So I've been trying to get mockito working in one of my projects, and it's not going as well as I'd hoped. I'm not yak shaving any more, I'm being stonewalled.
+:categories: code rant
 
 {page-excerpt}
 
