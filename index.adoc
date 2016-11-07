@@ -4,101 +4,31 @@
 :page-title: Tzrlk
 :page-description: My personal site
 
-== Recent Posts
-{% for post in site.posts limit:2 %}
-link:{{ post.url }}[{{ post.date | date: "%d %B %Y" }}]::
-	{{ post.excerpt }} link:{{ post.url }}[more]
-{% endfor %}
-
-== About
-image::https://lh3.googleusercontent.com/kvsq3qsAkU21M12oDNdJZyRiJ_ayASr0g1F8nXU2SyGcoN9sODTZDyCz8s3G7PInyvbdoUsb80r2HeDda0GqLbZHUg0h1eqD5zCb4nAnhbhaQ5EV0WxRsYTRsjWFVgMUpfeDMJ1TIpr-j4L8f1ZFdhhHsUwBN-r0pBCUboWL_gAWFJvZK2-gCxwrXUhgDwIPYG48tAp1cMdhuQyPtNfdb_PLpgF9lhd_9y6EYfqNcaQjYn_hQa0pYD3Xw4KFK9gZiFMqNapjV_RcgOPS9jEozHngSKykQGgPGQem1LJ2Ja-WoqcMdzu3K_7HDq6q9xEbuSfdjfSp6FX76sdJE0Dib1G6FDxAsqGmTSXVFdj261OkCHO1Q1U-tDu4jYyQB3tFIWhtj-T4qzmnvCsa_5k6igikmmHrTRheoLTJKV7Ing4naV1auJnKyoGvtCFRiPrSsh_3r5LykA0suG7EMgKR5PvHtoq9foSWDgbcDaUHI6qFkW1TQ0r90jQDS2eW4Ho29JOIVvxJHCRSRWI7VGMnGhCt0KNLgbk7-CxhtiqFndKqlDXo-okD75S15Dz6_h8ZfMYiBjmjyL7JzpLqIG80lORaNOmEzlKpz4TezNCaRPEtcBGu=w597-h925-no["Peter Cummuskey",height=150,width=100,float="right"]
-
-I'm a software engineer working on all sorts of cool stuff. I'm a seasoned Java developer, and have recently seen the miracles of Kotlin. I love coding in NodeJS, and Angular, etc. for some bizarre reason. Finally, I've been experimenting with Docker, Puppet, and Rust here and abouts.
-
-I'm also a tabletop RPG gamer, LARPer, and computer gamer. I regularly go clay pidgeon shooting, and enjoy laser strike when I can get it. Pool, cocktails and sheisha round out my more geeky interests.
-
-== Contact
-[cols=">s,<",frame="none",grid="none",options="compact"]
-|========================================================================
-| Email    | peterc@aetheric.co.nz
-| Reddit   | http://reddit.com/u/tzrlk[/u/tzrlk]
-| Google+  | http://plus.google.com/+PeterCummuskey[+PeterCummuskey]
-| LinkedIn | https://nz.linkedin.com/in/petercummuskey[/in/petercummuskey]
-| Twitter  | https://twitter.com/tzrlk[@Tzrlk]
-| Github   | https://github.com/tzrlk[/Tzrlk]
-|========================================================================
-
 ++++
-<script type="application/ld+json">
-{
-	"@context": "http://schema.org/",
-	"@type": "Person",
-	"name": "Peter Cummuskey",
-	"additionalName": "Tzrlk",
-	"affiliation": [
-		{
-			"@type": "Organization",
-			"name": "Aetheric Engineering",
-			"url": "https://aetheric.co.nz/",
-			"brand": {
-				"@type": "Brand",
-				"logo": "https://aetheric.co.nz/favicon.ico"
-			}
-		}
-	],
-	"alumniOf": {
-		"@type": "EducationalOrganization",
-		"name": "AUT University"
-	},
-	"birthDate": "29/03/1988",
-	"birthPlace": {
-		"@type": "Place",
-		"name": "Auckland"
-	},
-	"email": "peterc@aetheric.co.nz",
-	"familyName": "Cummuskey",
-	"gender": {
-		"@type": "GenderType",
-		"name": "Male",
-		"url": "http://schema.org/Male"
-	},
-	"givenName": "Peter",
-	"honorificPrefix": "Rev.",
-	"jobTitle": "Software Engineer",
-	"memberOf": [
-		{
-			"@type": "Organization",
-			"name": "IITP"
-		}
-	],
-	"nationality": {
-		"@type": "Country",
-		"name": "New Zealand"
-	},
-	"parent": [
-		{
-			"@type": "Person",
-			"name": "Grant Cummuskey"
-		},
-		{
-			"@type": "Person",
-			"name": "Renate Cummuskey"
-		}
-	],
-	"sibling": [
-		{
-			"@type": "Person",
-			"name": "Patrick Cummuskey",
-			"url": "http://patrickcummuskey.co.nz/"
-		}
-	],
-	"worksFor": [
-		{
-			"@type": "Organization",
-			"name": "Bravura Solutions",
-			"url": "https://bravurasolutions.com/"
-		}
-	]
-}
-</script>
+<div itemscope itemtype="http://schema.org/Blog">
+	{% for post in site.posts %}
+		<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+			<h2>
+				<a class="post-link" href="{{ post.url | prepend: site.baseurl }}" itemprop="url">
+					<span itemprop="name">{{ post.title }}</span>
+				</a>
+			</h2>
+
+			<p class="post-meta">
+				<span itemprop="author">{{ post.author }}</span>
+				<time itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">
+					{{ post.date | date: "%-d %b, %Y" }}
+				</time>
+				<span itemprop="keywords" content="{{ post.tags | join: ',' }}" />
+			</p>
+
+			<div class="entry" itemprop="description">
+				<p>{{ post.excerpt }}</p>
+				{{ post.content }}
+			</div>
+
+		</article>
+	{% endfor %}
+</div>
 ++++

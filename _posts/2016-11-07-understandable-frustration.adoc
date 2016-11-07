@@ -1,11 +1,9 @@
-= {page-navtitle}
-:showtitle:
 :page-navtitle: Understandable Frustration
-:page-root: ../../../
-:page-excerpt: So I've been trying to get mockito working in one of my projects, and it's not going as well as I'd hoped. I'm not yak shaving any more, I'm being stonewalled.
+:page-liquid:
 :categories: code rant
+:page-excerpt: So I've been trying to get mockito working in one of my projects, and it's not going as well as I'd hoped. I'm not yak shaving any more, I'm being stonewalled.
 
-{page-excerpt}
+= {page-navtitle}
 
 With any luck, venting about this here will lead me to the correct answer via the highly effective process of https://en.wikipedia.org/wiki/Rubber_duck_debugging[Rubber Duck Debugging].
 
