@@ -1,0 +1,163 @@
+<!doctype html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en"> <![endif]-->
+<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Understandable Frustration</title>
+	<meta name="description"
+	      content="The personal page of Peter Cummuskey">
+	<meta name="author" content="Peter Cummuskey">
+	<meta name="copyright" content="Peter Cummuskey 2016">
+	<link rel="stylesheet" href="../../../css/foundation.css">
+	<link rel="stylesheet" href="../../../css/font-awesome.css">
+	<link rel="stylesheet" href="../../../css/coderay.css">
+	<link rel="stylesheet" href="../../../css/asciidoctor.css">
+	<script src="../../../js/vendor/modernizr.js"></script>
+	<script src="../../../js/toc.js"></script>
+</head>
+<body>
+
+
+<!-- Nav Bar -->
+
+<nav class="top-bar" data-topbar>
+	<ul class="title-area">
+		<!-- Title Area -->
+		<li class="name">
+			<h1>
+				<a href="../../../">Tzrlk</a>
+			</h1>
+		</li>
+		<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+	</ul>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+
+<div class="row">
+
+	<!-- Main Blog Content -->
+	<div class="large-9 columns" role="content">
+
+		<h1>Understandable Frustration</h1>
+<div class="paragraph">
+<p>So I&#8217;ve been trying to get mockito working in one of my projects, and it&#8217;s not going as well as I&#8217;d hoped. I&#8217;m not yak shaving any more, I&#8217;m being stonewalled.</p>
+</div>
+<div class="paragraph">
+<p>With any luck, venting about this here will lead me to the correct answer via the highly effective process of <a href="https://en.wikipedia.org/wiki/Rubber_duck_debugging">Rubber Duck Debugging</a>.</p>
+</div>
+<div class="paragraph">
+<p>So, I&#8217;ve been attempting to convert the haphazard pile of bash scripts used to prevent bad pushes to the git repository at work into an invoked cli jar compiled from kotlin. For the most part, the conversion process has gone well. I haven&#8217;t had the chance to properly refactor and reengineer it yet, but that should come after I can get the damn tests passing.</p>
+</div>
+<div class="paragraph">
+<p>I had already been using <a href="http://lmgtfy.com/?q=shunit2">shunit2</a> via <a href="https://github.com/aetheric/shunit2">my own 'fork' of it</a> to make sure all the bash scripts worked like I expected, but as you might imagine, that was super clunky to run and maintain. Converting everything to kotlin was fairly straightforward, and I ended up using a neat set of libraries:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/npryce/hamkrest">hamkrest</a></p>
+</li>
+<li>
+<p><a href="https://github.com/springockito/springockito">springockito</a></p>
+</li>
+<li>
+<p><a href="https://github.com/nhaarman/mockito-kotlin">mockito-kotlin</a></p>
+</li>
+<li>
+<p><a href="https://github.com/pholser/junit-quickcheck">junit-quickcheck</a></p>
+</li>
+<li>
+<p><a href="https://github.com/avh4/junit-nested">junit-nested</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Haven&#8217;t ended up getting too much use out of quickcheck just yet, but mockito-kotlin and hamkrest have been amazing in a kotlin environment. They&#8217;re little more than a thin veneer on top of the relevant libraries, but it makes things much simpler to write.</p>
+</div>
+<div class="paragraph">
+<p>The thing that&#8217;s driving me nuts at the moment, however, is a pair of tests keep failing for a clear reason, but without the needed context to fix it. I even ended up creating a series of wrapper classes to avoid needing to mock things like RevCommit and ObjectId (jgit), but to no avail. Each and every time I run the damn thing I get the same set of errors.</p>
+</div>
+<div class="paragraph">
+<p>The problem is the stacktrace ends up being useless, since it&#8217;s only points to the place where the library raised the error, rather than the place that the error is complaining about. A few libraries like angularjs are notorious for this complete lack of context in their errors, meaning you end up waiting for the error to be thrown, then debugging backward through the process until you find what&#8217;s wrong.</p>
+</div>
+<div class="paragraph">
+<p>Of course, in my case, the problem <a href="https://www.youtube.com/watch?v=BUsSPAFmauY&amp;feature=youtu.be&amp;t=33s">is like an onion</a>. Every time I think I&#8217;ve stumbled across what&#8217;s causing the damn errors, I just uncover a new one that makes just as little sense as the first. Observe:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>java.lang.ClassCastException:
+	org.mockito.internal.creation.cglib.ClassImposterizer
+	$ClassWithSuperclassToWorkAroundCglibBug
+	$EnhancerByMockitoWithCGLIB
+	$$8b138c7f cannot be cast to
+	...tools.git.wrappers.ObjectIdWrapper</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>I love how descriptive the class names are, but it tells me almost nothing about why the hell this is happening. Casting that class should be perfectly fine if its 'extending' ObjectIdWrapper. The only thing I can think of is that it&#8217;s a bug somewhere between mockito and kotlin, and if that&#8217;s the case, then I should just flip a table and give up trying to have testable code.</p>
+</div>
+<div class="paragraph">
+<p>Of course, in my efforts to get one test working, I end up breaking a bunch of other ones. Fml. Maybe I&#8217;ll have a flash of inspiration, but seeing how things have progressed so far makes that a very dim possibility.</p>
+</div>
+
+	</div>
+
+	<!-- End Main Content -->
+
+	<!-- Sidebar -->
+
+	<aside class="large-3 columns">
+
+		<h4>Posts</h4>
+		<ul id="posts" class="posts nav">
+			
+			<li><a href="./2016/11/07/understandable-frustration.html">Understandable Frustration</a></li>
+			
+			<li><a href="./2016/11/05/new-beginning.html">New Beginning</a></li>
+			
+		</ul>
+
+		<div class="panel">
+			<h5>Featured</h5>
+
+			<p><!-- put widgets here or something --></p>
+		</div>
+
+	</aside>
+
+	<!-- End Sidebar -->
+</div>
+
+<!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+
+<footer class="row">
+	<div class="large-12 columns">
+		<hr/>
+		<div class="row">
+			<div class="large-12 columns">
+				<p>
+					<a href="http://aetheric.co.nz/">Aetheric Engineering</a>
+					<span>/</span>
+					<span>Tzrlk</span>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="../../../js/vendor/jquery.js"></script>
+<script src="../../../js/foundation.min.js"></script>
+<script>
+	$(document).foundation();
+	var doc = document.documentElement;
+	doc.setAttribute('data-useragent', navigator.userAgent);
+</script>
+</body>
+</html>
