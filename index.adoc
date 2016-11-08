@@ -16,11 +16,11 @@
 			</h2>
 
 			<p class="post-meta">
-				<span itemprop="author">{{ post.author }}</span>
+				<a href="{{ site.baseurl }}/about" itemprop="author">{{ post.author }}</a>
 				<time itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">
 					{{ post.date | date: "%-d %b, %Y" }}
 				</time>
-				<span itemprop="keywords" content="{{ post.tags | join: ',' }}" />
+				<span itemprop="keywords">{{ post.tags | join: ',' }}</span>
 			</p>
 
 			<div class="entry" itemprop="description">

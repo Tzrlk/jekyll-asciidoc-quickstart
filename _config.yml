@@ -21,3 +21,19 @@ asciidoctor:
     - icons=font
 gems:
   - jekyll-asciidoc
+timezone: 'Pacific/Auckland'
+defaults:
+  -
+    scope:
+      path: ''
+    values:
+      layout: 'default'
+      page-liquid: true
+      author: 'Peter Cummuskey'
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+      layout: 'post'
+      root: ../../../

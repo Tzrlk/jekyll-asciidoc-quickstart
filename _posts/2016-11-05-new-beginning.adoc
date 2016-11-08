@@ -1,5 +1,4 @@
 :page-navtitle: New Beginning
-:page-liquid:
 :tags: misc meta
 :page-excerpt: No idea how long this will last, but at least it's up and running.
 

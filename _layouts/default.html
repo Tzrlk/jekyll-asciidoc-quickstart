@@ -10,12 +10,12 @@
 	      content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 	<meta name="author" content="Peter Cummuskey" itemprop="author">
 	<meta name="copyright" content="Peter Cummuskey 2016">
-	<link rel="stylesheet" href="{{page.root}}css/foundation.css">
-	<link rel="stylesheet" href="{{page.root}}css/font-awesome.css">
-	<link rel="stylesheet" href="{{page.root}}css/coderay.css">
-	<link rel="stylesheet" href="{{page.root}}css/asciidoctor.css">
-	<script src="{{page.root}}js/vendor/modernizr.js"></script>
-	<script src="{{page.root}}js/toc.js"></script>
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/foundation.css">
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/font-awesome.css">
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/coderay.css">
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/asciidoctor.css">
+	<script src="{{ site.baseurl }}/js/vendor/modernizr.js"></script>
+	<script src="{{ site.baseurl }}/js/toc.js"></script>
 </head>
 <body>
 
@@ -27,7 +27,7 @@
 		<!-- Title Area -->
 		<li class="name">
 			<h1>
-				<a href="{{page.root}}">{{site.title}}</a>
+				<a href="{{ site.baseurl }}/">{{site.title}}</a>
 			</h1>
 		</li>
 		<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -56,12 +56,11 @@
 		<h4>Posts</h4>
 		<ul id="posts" class="posts nav">
 			{% for post in site.posts limit: 5 %}
-			<li><a href=".{{ post.url }}">{{ post.navtitle }}</a></li>
+			<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.navtitle }}</a></li>
 			{% endfor %}
 		</ul>
 
 		<div class="panel">
-			<h5>Featured</h5>
 
 			<p><!-- put widgets here or something --></p>
 		</div>
@@ -84,15 +83,15 @@
 				<p>
 					<a href="http://aetheric.co.nz/">Aetheric Engineering</a>
 					<span>/</span>
-					<span>Tzrlk</span>
+					<a href="{{ site.baseurl }}/about">Tzrlk</a>
 				</p>
 			</div>
 		</div>
 	</div>
 </footer>
 
-<script src="{{page.root}}js/vendor/jquery.js"></script>
-<script src="{{page.root}}js/foundation.min.js"></script>
+<script src="{{ site.baseurl }}/js/vendor/jquery.js"></script>
+<script src="{{ site.baseurl }}/js/foundation.min.js"></script>
 <script>
 	$(document).foundation();
 	var doc = document.documentElement;
