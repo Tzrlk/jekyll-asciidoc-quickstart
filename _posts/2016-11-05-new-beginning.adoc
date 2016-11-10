@@ -1,5 +1,5 @@
 :page-navtitle: New Beginning
-:tags: misc meta
+:categories: misc meta
 :page-excerpt: No idea how long this will last, but at least it's up and running.
 
 I've made a resolution to actually maintain a personal site so I can blog about the sort of crap I do development-wise. I've tried using blogging platforms, but I'd much rather handle my blogging via version control.
