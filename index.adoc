@@ -3,6 +3,9 @@
 :page-liquid:
 :page-title: Tzrlk
 :page-description: My personal site
+:page-excerpt:
+
+{page-excerpt}
 
 ++++
 <div itemscope itemtype="http://schema.org/Blog">

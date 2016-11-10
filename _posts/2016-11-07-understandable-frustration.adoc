@@ -2,8 +2,6 @@
 :categories: code rant
 :page-excerpt: So I've been trying to get mockito working in one of my projects, and it's not going as well as I'd hoped. I'm not yak shaving any more, I'm being stonewalled.
 
-= {page-navtitle}
-
 With any luck, venting about this here will lead me to the correct answer via the highly effective process of https://en.wikipedia.org/wiki/Rubber_duck_debugging[Rubber Duck Debugging].
 
 So, I've been attempting to convert the haphazard pile of bash scripts used to prevent bad pushes to the git repository at work into an invoked cli jar compiled from kotlin. For the most part, the conversion process has gone well. I haven't had the chance to properly refactor and reengineer it yet, but that should come after I can get the damn tests passing.
