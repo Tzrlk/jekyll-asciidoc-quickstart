@@ -1,0 +1,5 @@
+:page-navtitle: Many Changes
+:categories: misc meta
+:page-excerpt: It looks like I'm getting the hang of this jekyll stuff, though with no small amount of frustration.
+
+I managed to put some jade code into the site, using the plugin that I installed much earlier, only to find that at least on the main index page, it doesn't render any liquid tags, even if I set the relevant property. Neither does it allow me to
