@@ -1,0 +1,3 @@
+:title: Programmers' Jihad: Tabs vs Spaces
+:categories: coding philosophy
+:excerpt: Because I've laid my argument down verbally a number of times, I figure I should put it to 'ink', and explain the only reason why tabs are a superior method of indentation.
