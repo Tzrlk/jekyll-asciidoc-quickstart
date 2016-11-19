@@ -1,0 +1,16 @@
+:page-navtitle: Warlock Woes
+:categories: rpgs dnd5
+:page-exerpt: Having played the 5e Warlock a couple of times, and heard a lot of talk about how underpowered it is, I'm giving a go at some potential fixes.
+
+A few people have already had a go at this problem:
+
+* https://standsinfire.wordpress.com/2015/08/09/dnd-5e-re-keying-the-warlock/[Stands In Fire: Re-keying the Warlock] 
+* https://www.reddit.com/r/dndnext/comments/2z76b6/revised_warlock_blade_pact/[/r/dndnext: Revised Warlock Blade Pact]
+* http://harbinger-of-doom.blogspot.co.nz/2015/03/d-5e-problems-in-warlock-design.html[Harbinger of Doom: Problems in the Warlock Design]
+
+And of course, there are always the character optimisation guides:
+
+* http://rpgbot.net/dnd5/characters/classes/warlock/[RPG BOT: The Warlock Handbook]
+
+One of the frequent themes in these articles is how 
+
