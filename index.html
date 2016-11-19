@@ -1,21 +1,21 @@
 <!doctype html>
 <!--[if IE 9]>
-<html class="lt-ie10" lang="en"> <![endif]-->
-<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+<html class="lt-ie10" lang="en" itemscope itemtype="http://schema.org/Blog"> <![endif]-->
+<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)" itemscope itemtype="http://schema.org/Blog">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Tzrlk</title>
-	<meta name="description"
+	<title itemprop="name">Tzrlk</title>
+	<meta name="description" itemprop="description"
 	      content="My personal site">
-	<meta name="author" content="Peter Cummuskey">
+	<meta name="author" content="Peter Cummuskey" itemprop="author">
 	<meta name="copyright" content="Peter Cummuskey 2016">
-	<link rel="stylesheet" href="css/foundation.css">
-	<link rel="stylesheet" href="css/font-awesome.css">
-	<link rel="stylesheet" href="css/coderay.css">
-	<link rel="stylesheet" href="css/asciidoctor.css">
-	<script src="js/vendor/modernizr.js"></script>
-	<script src="js/toc.js"></script>
+	<link rel="stylesheet" href="/css/foundation.css">
+	<link rel="stylesheet" href="/css/font-awesome.css">
+	<link rel="stylesheet" href="/css/coderay.css">
+	<link rel="stylesheet" href="/css/asciidoctor.css">
+	<script src="/js/vendor/modernizr.js"></script>
+	<script src="/js/toc.js"></script>
 </head>
 <body>
 
@@ -27,7 +27,7 @@
 		<!-- Title Area -->
 		<li class="name">
 			<h1>
-				<a href="">Tzrlk</a>
+				<a href="/">Tzrlk</a>
 			</h1>
 		</li>
 		<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -44,147 +44,120 @@
 	<div class="large-9 columns" role="content">
 
 		<h1>Tzrlk</h1>
-<div class="sect1">
-<h2 id="recent_posts">Recent Posts</h2>
-<div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><a href="/2016/11/07/understandable-frustration.html">07 November 2016</a></dt>
-<dd>
-<p>So I&#8217;ve been trying to get mockito working in one of my projects, and it&#8217;s not going as well as I&#8217;d hoped. I&#8217;m not yak shaving any more, I&#8217;m being stonewalled. <a href="/2016/11/07/understandable-frustration.html">more</a></p>
-</dd>
-<dt class="hdlist1"><a href="/2016/11/05/new-beginning.html">05 November 2016</a></dt>
-<dd>
-<p>No idea how long this will last, but at least it&#8217;s up and running. <a href="/2016/11/05/new-beginning.html">more</a></p>
-</dd>
-</dl>
+<div class="paragraph">
+<p></p>
 </div>
+<div itemscope itemtype="http://schema.org/Blog">
+
+		<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+			<h2>
+				<a class="post-link" href="/2016/11/07/understandable-frustration.html" itemprop="url">
+					<span itemprop="name">Understandable Frustration</span>
+				</a>
+			</h2>
+
+			<p class="post-meta">
+				<a href="/about" itemprop="author">Peter Cummuskey</a>
+				<time itemprop="datePublished" datetime="2016-11-07T00:00:00+13:00">
+					7 Nov, 2016
+				</time>
+				<span itemprop="keywords"></span>
+			</p>
+
+			<div class="entry" itemprop="description">
+				<p>So I've been trying to get mockito working in one of my projects, and it's not going as well as I'd hoped. I'm not yak shaving any more, I'm being stonewalled.</p>
+				<div class="paragraph">
+<p>With any luck, venting about this here will lead me to the correct answer via the highly effective process of <a href="https://en.wikipedia.org/wiki/Rubber_duck_debugging">Rubber Duck Debugging</a>.</p>
 </div>
+<div class="paragraph">
+<p>So, I&#8217;ve been attempting to convert the haphazard pile of bash scripts used to prevent bad pushes to the git repository at work into an invoked cli jar compiled from kotlin. For the most part, the conversion process has gone well. I haven&#8217;t had the chance to properly refactor and reengineer it yet, but that should come after I can get the damn tests passing.</p>
 </div>
-<div class="sect1">
-<h2 id="about">About</h2>
-<div class="sectionbody">
-<div class="imageblock" style="float: right">
+<div class="paragraph">
+<p>I had already been using <a href="http://lmgtfy.com/?q=shunit2">shunit2</a> via <a href="https://github.com/aetheric/shunit2">my own 'fork' of it</a> to make sure all the bash scripts worked like I expected, but as you might imagine, that was super clunky to run and maintain. Converting everything to kotlin was fairly straightforward, and I ended up using a neat set of libraries:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/npryce/hamkrest">hamkrest</a></p>
+</li>
+<li>
+<p><a href="https://github.com/springockito/springockito">springockito</a></p>
+</li>
+<li>
+<p><a href="https://github.com/nhaarman/mockito-kotlin">mockito-kotlin</a></p>
+</li>
+<li>
+<p><a href="https://github.com/pholser/junit-quickcheck">junit-quickcheck</a></p>
+</li>
+<li>
+<p><a href="https://github.com/avh4/junit-nested">junit-nested</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Haven&#8217;t ended up getting too much use out of quickcheck just yet, but mockito-kotlin and hamkrest have been amazing in a kotlin environment. They&#8217;re little more than a thin veneer on top of the relevant libraries, but it makes things much simpler to write.</p>
+</div>
+<div class="paragraph">
+<p>The thing that&#8217;s driving me nuts at the moment, however, is a pair of tests keep failing for a clear reason, but without the needed context to fix it. I even ended up creating a series of wrapper classes to avoid needing to mock things like RevCommit and ObjectId (jgit), but to no avail. Each and every time I run the damn thing I get the same set of errors.</p>
+</div>
+<div class="paragraph">
+<p>The problem is the stacktrace ends up being useless, since it&#8217;s only points to the place where the library raised the error, rather than the place that the error is complaining about. A few libraries like angularjs are notorious for this complete lack of context in their errors, meaning you end up waiting for the error to be thrown, then debugging backward through the process until you find what&#8217;s wrong.</p>
+</div>
+<div class="paragraph">
+<p>Of course, in my case, the problem <a href="https://www.youtube.com/watch?v=BUsSPAFmauY&amp;feature=youtu.be&amp;t=33s">is like an onion</a>. Every time I think I&#8217;ve stumbled across what&#8217;s causing the damn errors, I just uncover a new one that makes just as little sense as the first. Observe:</p>
+</div>
+<div class="literalblock">
 <div class="content">
-<img src="https://lh3.googleusercontent.com/kvsq3qsAkU21M12oDNdJZyRiJ_ayASr0g1F8nXU2SyGcoN9sODTZDyCz8s3G7PInyvbdoUsb80r2HeDda0GqLbZHUg0h1eqD5zCb4nAnhbhaQ5EV0WxRsYTRsjWFVgMUpfeDMJ1TIpr-j4L8f1ZFdhhHsUwBN-r0pBCUboWL_gAWFJvZK2-gCxwrXUhgDwIPYG48tAp1cMdhuQyPtNfdb_PLpgF9lhd_9y6EYfqNcaQjYn_hQa0pYD3Xw4KFK9gZiFMqNapjV_RcgOPS9jEozHngSKykQGgPGQem1LJ2Ja-WoqcMdzu3K_7HDq6q9xEbuSfdjfSp6FX76sdJE0Dib1G6FDxAsqGmTSXVFdj261OkCHO1Q1U-tDu4jYyQB3tFIWhtj-T4qzmnvCsa_5k6igikmmHrTRheoLTJKV7Ing4naV1auJnKyoGvtCFRiPrSsh_3r5LykA0suG7EMgKR5PvHtoq9foSWDgbcDaUHI6qFkW1TQ0r90jQDS2eW4Ho29JOIVvxJHCRSRWI7VGMnGhCt0KNLgbk7-CxhtiqFndKqlDXo-okD75S15Dz6_h8ZfMYiBjmjyL7JzpLqIG80lORaNOmEzlKpz4TezNCaRPEtcBGu=w597-h925-no" alt="Peter Cummuskey" width="100" height="150">
+<pre>java.lang.ClassCastException:
+	org.mockito.internal.creation.cglib.ClassImposterizer
+	$ClassWithSuperclassToWorkAroundCglibBug
+	$EnhancerByMockitoWithCGLIB
+	$$8b138c7f cannot be cast to
+	...tools.git.wrappers.ObjectIdWrapper</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>I&#8217;m a software engineer working on all sorts of cool stuff. I&#8217;m a seasoned Java developer, and have recently seen the miracles of Kotlin. I love coding in NodeJS, and Angular, etc. for some bizarre reason. Finally, I&#8217;ve been experimenting with Docker, Puppet, and Rust here and abouts.</p>
+<p>I love how descriptive the class names are, but it tells me almost nothing about why the hell this is happening. Casting that class should be perfectly fine if its 'extending' ObjectIdWrapper. The only thing I can think of is that it&#8217;s a bug somewhere between mockito and kotlin, and if that&#8217;s the case, then I should just flip a table and give up trying to have testable code.</p>
 </div>
 <div class="paragraph">
-<p>I&#8217;m also a tabletop RPG gamer, LARPer, and computer gamer. I regularly go clay pidgeon shooting, and enjoy laser strike when I can get it. Pool, cocktails and sheisha round out my more geeky interests.</p>
+<p>Of course, in my efforts to get one test working, I end up breaking a bunch of other ones. Fml. Maybe I&#8217;ll have a flash of inspiration, but seeing how things have progressed so far makes that a very dim possibility.</p>
 </div>
+			</div>
+
+		</article>
+
+		<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+			<h2>
+				<a class="post-link" href="/2016/11/05/new-beginning.html" itemprop="url">
+					<span itemprop="name">New Beginning</span>
+				</a>
+			</h2>
+
+			<p class="post-meta">
+				<a href="/about" itemprop="author">Peter Cummuskey</a>
+				<time itemprop="datePublished" datetime="2016-11-05T00:00:00+13:00">
+					5 Nov, 2016
+				</time>
+				<span itemprop="keywords"></span>
+			</p>
+
+			<div class="entry" itemprop="description">
+				<p>No idea how long this will last, but at least it's up and running.</p>
+				<div class="paragraph">
+<p>I&#8217;ve made a resolution to actually maintain a personal site so I can blog about the sort of crap I do development-wise. I&#8217;ve tried using blogging platforms, but I&#8217;d much rather handle my blogging via version control.</p>
 </div>
+<div class="paragraph">
+<p>I&#8217;ll try and keep the content here on-topic, but don&#8217;t expect anything more than a stream of consciousness rant from anything I publish.</p>
 </div>
-<div class="sect1">
-<h2 id="contact">Contact</h2>
-<div class="sectionbody">
-<table class="tableblock frame-none grid-none spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-right valign-top"><p class="tableblock"><strong>Email</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mailto:peterc@aetheric.co.nz">peterc@aetheric.co.nz</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-right valign-top"><p class="tableblock"><strong>Reddit</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://reddit.com/u/tzrlk">/u/tzrlk</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-right valign-top"><p class="tableblock"><strong>Google+</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://plus.google.com/+PeterCummuskey">+PeterCummuskey</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-right valign-top"><p class="tableblock"><strong>LinkedIn</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://nz.linkedin.com/in/petercummuskey">/in/petercummuskey</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-right valign-top"><p class="tableblock"><strong>Twitter</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://twitter.com/tzrlk">@Tzrlk</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-right valign-top"><p class="tableblock"><strong>Github</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/tzrlk">/Tzrlk</a></p></td>
-</tr>
-</tbody>
-</table>
-<script type="application/ld+json">
-{
-	"@context": "http://schema.org/",
-	"@type": "Person",
-	"name": "Peter Cummuskey",
-	"additionalName": "Tzrlk",
-	"affiliation": [
-		{
-			"@type": "Organization",
-			"name": "Aetheric Engineering",
-			"url": "https://aetheric.co.nz/",
-			"brand": {
-				"@type": "Brand",
-				"logo": "https://aetheric.co.nz/favicon.ico"
-			}
-		}
-	],
-	"alumniOf": {
-		"@type": "EducationalOrganization",
-		"name": "AUT University"
-	},
-	"birthDate": "29/03/1988",
-	"birthPlace": {
-		"@type": "Place",
-		"name": "Auckland"
-	},
-	"email": "peterc@aetheric.co.nz",
-	"familyName": "Cummuskey",
-	"gender": {
-		"@type": "GenderType",
-		"name": "Male",
-		"url": "http://schema.org/Male"
-	},
-	"givenName": "Peter",
-	"honorificPrefix": "Rev.",
-	"jobTitle": "Software Engineer",
-	"memberOf": [
-		{
-			"@type": "Organization",
-			"name": "IITP"
-		}
-	],
-	"nationality": {
-		"@type": "Country",
-		"name": "New Zealand"
-	},
-	"parent": [
-		{
-			"@type": "Person",
-			"name": "Grant Cummuskey"
-		},
-		{
-			"@type": "Person",
-			"name": "Renate Cummuskey"
-		}
-	],
-	"sibling": [
-		{
-			"@type": "Person",
-			"name": "Patrick Cummuskey",
-			"url": "http://patrickcummuskey.co.nz/"
-		}
-	],
-	"worksFor": [
-		{
-			"@type": "Organization",
-			"name": "Bravura Solutions",
-			"url": "https://bravurasolutions.com/"
-		}
-	]
-}
-</script>
+<div class="paragraph">
+<p>That being said, I&#8217;ve got plenty of stuff to add <a href="https://youtu.be/OQnd5ilKx2Y">my uninformed ad-hoc reckon</a> to, and I&#8217;m sure that if you end up reading this, you&#8217;ll be chomping at the bit to reckon something yourself.</p>
 </div>
+			</div>
+
+		</article>
+
 </div>
 
 	</div>
@@ -198,14 +171,13 @@
 		<h4>Posts</h4>
 		<ul id="posts" class="posts nav">
 			
-			<li><a href="./2016/11/07/understandable-frustration.html">Understandable Frustration</a></li>
+			<li><a href="/2016/11/07/understandable-frustration.html">Understandable Frustration</a></li>
 			
-			<li><a href="./2016/11/05/new-beginning.html">New Beginning</a></li>
+			<li><a href="/2016/11/05/new-beginning.html">New Beginning</a></li>
 			
 		</ul>
 
 		<div class="panel">
-			<h5>Featured</h5>
 
 			<p><!-- put widgets here or something --></p>
 		</div>
@@ -228,15 +200,15 @@
 				<p>
 					<a href="http://aetheric.co.nz/">Aetheric Engineering</a>
 					<span>/</span>
-					<span>Tzrlk</span>
+					<a href="/about">Tzrlk</a>
 				</p>
 			</div>
 		</div>
 	</div>
 </footer>
 
-<script src="js/vendor/jquery.js"></script>
-<script src="js/foundation.min.js"></script>
+<script src="/js/vendor/jquery.js"></script>
+<script src="/js/foundation.min.js"></script>
 <script>
 	$(document).foundation();
 	var doc = document.documentElement;
