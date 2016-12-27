@@ -1,37 +1,45 @@
 title: Tzrlk
 description: The personal page of Peter Cummuskey
+timezone: 'Pacific/Auckland'
+
+include:
+  - .travis.yml
 exclude:
   - LICENSE.adoc
   - README.adoc
   - Gemfile
   - Gemfile.lock
   - Rakefile
-include:
-  - .travis.yml
 keep_files:
   - .git
   - CNAME
-asciidoc: {}
+
+gems:
+  - jekyll-asciidoc
+  - asciidoctor-diagram
+
+asciidoc:
+  processor: asciidoctor
+
 asciidoctor:
   base_dir: :docdir
   safe: unsafe
   attributes:
-    - idseparator=_
-    - source-highlighter=coderay
-    - icons=font
-gems:
-  - jekyll-asciidoc
-timezone: 'Pacific/Auckland'
+    idseparator: _
+    source-highlighter: coderay
+    icons: font
+    imagesdir: /images
+
 defaults:
-  -
-    scope:
+
+  - scope:
       path: ''
     values:
       layout: 'default'
       page-liquid: true
       author: 'Peter Cummuskey'
-  -
-    scope:
+
+  - scope:
       path: ''
       type: 'posts'
     values:
