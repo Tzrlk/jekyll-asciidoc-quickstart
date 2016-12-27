@@ -1,0 +1,3 @@
+:title: Semantic Markup Blogging
+:categories: coding meta
+:excerpt: Since I started doing this blog, I've wanted to embed as much semantic information in my posts as possible, not just to aid SEO for content I link to, but to provide a bit more context to web searches. Unfortunately, it's not so easy to do this in Asciidoc.
