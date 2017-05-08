@@ -1,15 +1,15 @@
-= Tzrlk
-:showtitle:
-:page-liquid:
-:page-title: Tzrlk
-:page-description: My personal site
-:page-excerpt:
+---
+title: Tzrlk
+showtitle: true
+page-liquid: true
+page-description: My personal site
+---
 
-{page-excerpt}
+# {{ page.title }}
 
-++++
 <div itemscope itemtype="http://schema.org/Blog">
 	{% for post in site.posts %}
+		<hr/>
 		<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 			<h2>
@@ -34,4 +34,3 @@
 		</article>
 	{% endfor %}
 </div>
-++++

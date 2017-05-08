@@ -1,6 +1,11 @@
 title: Tzrlk
-description: The personal page of Peter Cummuskey
+name: Tzrlk @ Aetheric
+url: http://tzrlk.aetheric.co.nz/
+description: The personal site of Peter Cummuskey
+author: Peter Cummuskey
 timezone: 'Pacific/Auckland'
+
+safe: false
 
 include:
   - .travis.yml
@@ -13,22 +18,6 @@ exclude:
 keep_files:
   - .git
   - CNAME
-
-gems:
-  - jekyll-asciidoc
-  - asciidoctor-diagram
-
-asciidoc:
-  processor: asciidoctor
-
-asciidoctor:
-  base_dir: :docdir
-  safe: unsafe
-  attributes:
-    idseparator: _
-    source-highlighter: coderay
-    icons: font
-    imagesdir: /img
 
 defaults:
 

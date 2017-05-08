@@ -3,4 +3,3 @@
 image:https://travis-ci.org/Tzrlk/tzrlk.github.io.svg?branch=sources["Build Status", link="https://travis-ci.org/Tzrlk/tzrlk.github.io"]
 
 These are the jekyll project sources for my personal site which get automatically built and deployed via travis to master.
-

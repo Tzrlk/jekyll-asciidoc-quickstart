@@ -6,7 +6,7 @@ branches:
     - sources
 
 rvm:
-  - 2.2.0
+  - 2.3.0
 
 env:
 
@@ -18,9 +18,7 @@ before_install:
   - git config --global user.email "build@travis-ci.org" 
 
 install:
-  - npm install --global jade
   - bundle install --jobs=3 --retry=3
 
 script:
   - bundle exec rake deploy
-

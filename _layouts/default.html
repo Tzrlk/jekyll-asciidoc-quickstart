@@ -56,13 +56,13 @@
 		<h4>Posts</h4>
 		<ul id="posts" class="posts nav">
 			{% for post in site.posts limit: 5 %}
-			<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.navtitle }}</a></li>
+			<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
 			{% endfor %}
 		</ul>
 
 		<div class="panel">
-
-			<p><!-- put widgets here or something --></p>
+			<div><a href="{{ site.baseurl }}">Home</a></div>
+			<div>&nbsp;&nbsp;<a href="{{ site.baseurl }}/about">About Me</a></div>
 		</div>
 
 	</aside>
@@ -84,7 +84,7 @@
 				<p>
 					<a href="http://aetheric.co.nz/">Aetheric Engineering</a>
 					<span>/</span>
-					<a href="{{ site.baseurl }}/about">Tzrlk</a>
+					<a href="{{ site.baseurl }}">Tzrlk</a>
 				</p>
 			</div>
 
