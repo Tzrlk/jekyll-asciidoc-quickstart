@@ -1,5 +1,5 @@
 ---
-page-navtitle: New Beginning
+page-title: New Beginning
 categories: misc meta
 page-excerpt: No idea how long this will last, but at least it's up and running.
 ---

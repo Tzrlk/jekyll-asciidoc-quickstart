@@ -1,0 +1,40 @@
+---
+title: "fun main()"
+page-description: ": Nothing"
+layout: page
+---
+
+<div class="row">
+	{% for post in site.posts %}
+		<div class="col-xs-12">
+			<article class="media" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+				{% if post.image %}
+					<div class="media-left">
+						<img class="media-object" src="{{ post.image }}" alt="{{ page.title }}"/>
+					</div>
+				{% endif %}
+
+				<div class="media-body">
+
+					<p class="post-meta pull-right">
+						<time itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">
+							{{ post.date | date: "%-d %b, %Y" }}
+						</time>
+						<span itemprop="keywords">{{ post.tags | join: ', ' }}</span>
+					</p>
+
+					<h2 class="media-heading" id="{{ post.slug }}" itemprop="name">{{ post.title }}</h2>
+
+					<a href="{{ post.url | prepend: site.baseurl }}" itemprop="url" role="button">
+						<div class="entry" itemprop="description">
+							{{ post.excerpt }}
+						</div>
+					</a>
+				
+				</div>
+
+			</article>
+		</div>
+	{% endfor %}
+</div>

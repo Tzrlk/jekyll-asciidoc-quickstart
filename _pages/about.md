@@ -55,9 +55,16 @@ root: ../../../
 </div>
 
 <div class="row">
+	<div class="columns medium-4"><p><strong>Mastodon</strong></p></div>
+	<div class="columns medium-8"><p>
+		<a href="https://mastodon.co.nz/@tzrlk" itemprop="sameAs">tzrlk@mastodon.co.nz</a>
+	</p></div>
+</div>
+
+<div class="row">
 	<div class="columns medium-4"><p><strong>Github</strong></p></div>
 	<div class="columns medium-8"><p>
-		<a href="https://github.com/tzrlk" itemprop="sameAs">/Tzrlk</a>
+		<a href="https://github.com/tzrlk" itemprop="sameAs">Tzrlk</a>
 	</p></div>
 </div>
 
