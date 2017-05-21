@@ -4,6 +4,7 @@ tags:  sysadmin linux centos
 ---
 
 So, I had to update git on a couple of Centos machines last week, and I ran into what appears to be a very common problem: Centos only has old versions of stuff in its repos. Subsequently, I had to figure out how to get the latest, and preferably from a yum repo, rather than installing it manually. Cue repo connection issues.
+{: itemprop="description" }
 
 ## The Story
 

@@ -6,6 +6,7 @@ author: Peter Cummuskey
 timezone: 'Pacific/Auckland'
 
 safe: false
+markdown: kramdown
 
 include:
   - .travis.yml
