@@ -1,10 +1,9 @@
 ---
-page-title: New Beginning
+title: New Beginning
 categories: misc meta
-page-excerpt: No idea how long this will last, but at least it's up and running.
 ---
 
-I've made a resolution to actually maintain a personal site so I can blog about the sort of crap I do development-wise. I've tried using blogging platforms, but I'd much rather handle my blogging via version control.
+No idea how long this will last, but at least it's up and running. I've made a resolution to actually maintain a personal site so I can blog about the sort of crap I do development-wise. I've tried using blogging platforms, but I'd much rather handle my blogging via version control.
 
 I'll try and keep the content here on-topic, but don't expect anything more than a stream of consciousness rant from anything I publish.
 

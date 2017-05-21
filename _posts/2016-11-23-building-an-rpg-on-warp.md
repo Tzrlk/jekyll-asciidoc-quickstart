@@ -1,10 +1,9 @@
 ---
 title: Building an RPG on WaRP
-categories: rpgs systems
-page-excerpt: I've been working on my own RPG for a while, and after at just a decade, think that WaRP is a good base.
+tags: rpgs systems
 ---
 
-I think about role-playing systems a lot, reading through everything I can get my hands on and critiquing each asked for how well it fulfills it's purpose in making the game fun.
+I've been working on my own RPG for a while, and after at just a decade, think that WaRP is a good base. I think about role-playing systems a lot, reading through everything I can get my hands on and critiquing each asked for how well it fulfills it's purpose in making the game fun.
 
 I've been trying to strike a balance between crunchiness and fluidity for a while. Mostly I err on the side of simulation, but since the setting in working with is a dreamscape, that ends up being less than appropriate.
 

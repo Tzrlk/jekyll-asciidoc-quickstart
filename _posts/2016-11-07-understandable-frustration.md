@@ -1,9 +1,9 @@
 ---
 title: Understandable Frustration
-page-excerpt: With any luck, venting about this here will lead me to the correct answer via the highly effective process of [Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging).
+tags: testing rant
 ---
 
-
+With any luck, venting about this here will lead me to the correct answer via the highly effective process of [Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging).
 
 So, I’ve been attempting to convert the haphazard pile of bash scripts used to prevent bad pushes to the git repository at work into an invoked cli jar compiled from kotlin. For the most part, the conversion process has gone well. I haven’t had the chance to properly refactor and reengineer it yet, but that should come after I can get the damn tests passing.
 
