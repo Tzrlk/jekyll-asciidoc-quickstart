@@ -1,52 +1,115 @@
 <!doctype html>
-<!--[if IE 9]>
-<html class="lt-ie10" lang="en" itemscope itemtype="http://schema.org/Blog"> <![endif]-->
-<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)" itemscope itemtype="http://schema.org/Blog">
+<html lang="en" itemscope itemtype="http://schema.org/Blog">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title itemprop="name">Building An Rpg On Warp</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title itemprop="name">Tzrlk: Building an RPG on WaRP</title>
+
 	<meta name="description" itemprop="description"
-	      content="The personal page of Peter Cummuskey">
-	<meta name="author" content="Peter Cummuskey" itemprop="author">
-	<meta name="copyright" content="Peter Cummuskey 2016">
-	<link rel="stylesheet" href="/css/foundation.css">
-	<link rel="stylesheet" href="/css/font-awesome.css">
-	<link rel="stylesheet" href="/css/coderay.css">
-	<link rel="stylesheet" href="/css/asciidoctor.css">
-	<script src="/js/vendor/modernizr.js"></script>
-	<script src="/js/toc.js"></script>
+	      content="The personal site of Peter Cummuskey" />
+
+	<meta name="author" itemprop="author"
+	      content="Peter Cummuskey" />
+
+	<meta name="copyright"
+	      content="Peter Cummuskey 2016" />
+
+	<!-- Assets -->
+	<link rel="stylesheet"
+	      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+	      integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0="
+	      crossorigin="anonymous" />
+
+	<!-- CONSIDER SWITCHING TO http://bulma.io/
+	<link rel="stylesheet"
+	      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.min.css"
+	      integrity="sha256-n+Ch7oRdzZ9+8/inp+1mK/0Bt4T/2PSmo4L6YGoDiVM="
+	      crossorigin="anonymous" />-->
+
+	<!-- Styles -->
+	<link rel="stylesheet"
+	      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"
+	      integrity="sha256-HxaKz5E/eBbvhGMNwhWRPrAR9i/lG1JeT4mD6hCQ7s4="
+	      crossorigin="anonymous" />
+	<link rel="stylesheet"
+	      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+	      integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w="
+	      crossorigin="anonymous" />
+	<link rel="stylesheet"
+	      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/bootstrap-material-design.min.css"
+	      integrity="sha256-j3CLSRG31GkOu6kaeLh7XsRgL2YNvRl9aOtXoAYt320="
+	      crossorigin="anonymous" />
+	<link rel="stylesheet"
+	      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/ripples.min.css"
+	      integrity="sha256-+Og2qJI9qzvKYwhGo/LYXg0FzE1BhEQfDsUSjKXQ3Bg="
+	      crossorigin="anonymous" />
+	<link rel="stylesheet"
+	      href="https://cdn.rawgit.com/richleland/pygments-css/master/tango.css" />
+
 </head>
 <body>
 
 
 <!-- Nav Bar -->
 
-<nav class="top-bar" data-topbar>
-	<ul class="title-area">
-		<!-- Title Area -->
-		<li class="name">
-			<h1>
-				<a href="/">Tzrlk</a>
-			</h1>
-		</li>
-		<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-	</ul>
+<nav class="navbar navbar-default" data-topbar>
+	<div class="container-fluid">
+
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-top" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">Tzrlk</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="nav-top">
+			<ul class="nav navbar-nav">
+
+				<li role="presentation">
+					<a href="/about">About Me</a>
+				</li>
+
+			</ul>
+		</div>
+
+	</div>
 </nav>
 <!-- End Nav -->
 
 
-<!-- Main Page Content and Sidebar -->
+<div class="container-fluid">
 
-<div class="row">
+	<aside class="col-md-3 col-lg-2">
+		<div class="row">
 
-	<!-- Main Blog Content -->
-	<div class="large-9 columns" role="content">
+			<nav class="col-xs-12 col-sm-4 col-md-12">
+				<h4>Contents</h4>
+				<div id="toc"></div>
+			</nav>
 
-		<div class="post" itemscope itemtype="http://schema.org/BlogPosting">
+			<section class="col-xs-12 col-sm-4 col-md-12">
+				<h4>Flair</h4>
+				<a href="https://stackexchange.com/users/18122" class="panel">
+					<img src="https://stackexchange.com/users/flair/18122.png?theme=clean"
+					     width="208" height="58" alt="Tzrlk on Stackexchange"/>
+				</a>
+			</section>
+
+		</div>
+	</aside>
+
+	<main class="col-md-9 col-lg-10" role="content">
+		<div class="container" style="margin-left: 0;">
+
+			<div class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
 	<header class="post-header">
-		<h1 class="post-title" itemprop="name">Building An Rpg On Warp</h1>
+		<h1 class="post-title" itemprop="name">Building an RPG on WaRP</h1>
 		<p class="post-meta">
 			<meta itemprop="keywords" content="" />
 			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -60,140 +123,101 @@
 	</header>
 
 	<article class="post-content" itemprop="articleBody">
-		<p itemprop="description">I've been working on my own RPG for a while, and after at just a decade, think that WaRP is a good base.</p>
-		<div class="paragraph">
-<p>I think about role-playing systems a lot, reading through everything I can get my hands on and critiquing each asked for how well it fulfills it&#8217;s purpose in making the game fun.</p>
-</div>
-<div class="paragraph">
-<p>I&#8217;ve been trying to strike a balance between crunchiness and fluidity for a while. Mostly I err on the side of simulation, but since the setting in working with is a dreamscape, that ends up being less than appropriate.</p>
-</div>
-<div class="paragraph">
-<p>There are three systems I think I can munge together to create what I&#8217;ve been after, those being <a href="http://www.atlas-games.com/warp/">WaRP</a>, <a href="http://www.evilhat.com/home/dont-rest-your-head-2/">Don&#8217;t Rest Your Head</a>, and <a href="http://www.mythic.wordpr.com/page14/page9/page9.html">Mythic</a>. Each of these is used to create a particular feel for their games, but alone don&#8217;t fit for mine.</p>
-</div>
-<div class="sect1">
-<h2 id="don_t_rest_your_head">Don&#8217;t Rest Your Head</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This game, <a href="http://www.evilhat.com/home/dont-rest-your-head-2/">published by Evil Hat</a>, pictures you as a super-insomniac that through your exhaustion has learned that there is a reality behind this one, and it&#8217;s not a nice place. Now that you know about it, you&#8217;re a target.</p>
-</div>
-<div class="paragraph">
-<p>The feature I&#8217;m most interested in with this one is the use of the dice system to create side-effects in the scene. There are 4 kinds of dice, and if during a challenge one of these groups is responsible for the highest individual die roll, there can be thematic repercussions to your character and/or the scene as a result.</p>
-</div>
-<div class="paragraph">
+		<p>I’ve been working on my own RPG for a while, and after at just a decade, think that WaRP is a good base. I think about role-playing systems a lot, reading through everything I can get my hands on and critiquing each asked for how well it fulfills it’s purpose in making the game fun.</p>
+
+<p>I’ve been trying to strike a balance between crunchiness and fluidity for a while. Mostly I err on the side of simulation, but since the setting in working with is a dreamscape, that ends up being less than appropriate.</p>
+
+<p>There are three systems I think I can munge together to create what I’ve been after, those being <a href="http://www.atlas-games.com/warp/">WaRP</a>, <a href="http://www.evilhat.com/home/dont-rest-your-head-2/">Don’t Rest Your Head</a>, and <a href="http://www.mythic.wordpr.com/page14/page9/page9.html">Mythic</a>. Each of these is used to create a particular feel for their games, but alone don’t fit for mine.</p>
+
+<h2 id="dont-rest-your-head">Don’t Rest Your Head</h2>
+
+<p>This game, <a href="http://www.evilhat.com/home/dont-rest-your-head-2/">published by Evil Hat</a>, pictures you as a super-insomniac that through your exhaustion has learned that there is a reality behind this one, and it’s not a nice place. Now that you know about it, you’re a target.</p>
+
+<p>The feature I’m most interested in with this one is the use of the dice system to create side-effects in the scene. There are 4 kinds of dice, and if during a challenge one of these groups is responsible for the highest individual die roll, there can be thematic repercussions to your character and/or the scene as a result.</p>
+
 <p>I always had the idea of having multiple forces that act on characters in the setting to make them miserable or to act as a dangerous source of power, so this method speaks to me.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
+
 <h2 id="mythic">Mythic</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Being a GM and being in control of the situation is great, but when you&#8217;re running a game completely off-the-cuff, it helps to be able to have some assistance when eyeballing it. Enter Mythic and it&#8217;s interesting <a href="http://www.mythic.wordpr.com/page14/page9/page9.html">GM Emulator</a>.</p>
-</div>
-<div class="paragraph">
+
+<p>Being a GM and being in control of the situation is great, but when you’re running a game completely off-the-cuff, it helps to be able to have some assistance when eyeballing it. Enter Mythic and it’s interesting <a href="http://www.mythic.wordpr.com/page14/page9/page9.html">“GM Emulator” system</a>.</p>
+
 <p>Long story short, the emulator gives you a table of probabilities, and a reasonably straightforward process by which you can arrange and mutate scenes as the story progresses. The core of this is the asking of yes/no questions and using the table and a d100 roll to answer them.</p>
-</div>
-<div class="paragraph">
-<p>I&#8217;m not sure how much of that I&#8217;d want to throw into the game, but having a way to answer questions during a scene about details that you may not have worked out beforehand is great, and at the very least, another tool at the GM&#8217;s disposal.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
+
+<p>I’m not sure how much of that I’d want to throw into the game, but having a way to answer questions during a scene about details that you may not have worked out beforehand is great, and at the very least, another tool at the GM’s disposal.</p>
+
 <h2 id="warp">WaRP</h2>
-<div class="sectionbody">
-<div class="paragraph">
+
 <p>The core of this post, <a href="http://www.atlas-games.com/warp/">WaRP</a> is the underlying system behind Over The Edge, and uses a dice mechanic similar to <a href="http://7thsea.com/">7th Sea</a>.</p>
-</div>
-<div class="paragraph">
+
 <p>Each character gets a small set of reasonably broad traits, and can use this to overcome challenges by rolling a number of dice equal to the trait, adding bonus dice if applicable, and choosing a number of dice to actually use in the final result equal to their trait value.</p>
-</div>
-<div class="paragraph">
-<p>It gets way more complicated of course, but the essence of "kept" and "unkept" dice gives you a decent probability curve, and allows you to throw on all sorts of bonuses without changing the maximum result. That being said, exploding rolls is one of the features, and that should provide any necessary lucky breaks the characters might need.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
+
+<p>It gets way more complicated of course, but the essence of “kept” and “unkept” dice gives you a decent probability curve, and allows you to throw on all sorts of bonuses without changing the maximum result. That being said, exploding rolls is one of the features, and that should provide any necessary lucky breaks the characters might need.</p>
+
 <h2 id="conclusion">Conclusion</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>I love tinkering with systems, but eventually I&#8217;ll need to battle test this all together against some real players.</p>
-</div>
-<div class="paragraph">
-<p>Of course, I could always use the Mythic emulator to emulate players as well&#8230;&#8203;</p>
-</div>
-</div>
-</div>
+
+<p>I love tinkering with systems, but eventually I’ll need to battle test this all together against some real players.</p>
+
+<p>Of course, I could always use the Mythic emulator to emulate players as well…​</p>
+
 	</article>
 
 </div>
 
 
-	</div>
-
-	<!-- End Main Content -->
-
-	<!-- Sidebar -->
-
-	<aside class="large-3 columns">
-
-		<h4>Posts</h4>
-		<ul id="posts" class="posts nav">
-			
-			<li><a href="/2016/12/27/warlock-woes.html">Warlock Woes</a></li>
-			
-			<li><a href="/2016/11/23/building-an-rpg-on-warp.html">Building an RPG on WaRP</a></li>
-			
-			<li><a href="/2016/11/07/understandable-frustration.html">Understandable Frustration</a></li>
-			
-			<li><a href="/2016/11/05/new-beginning.html">New Beginning</a></li>
-			
-		</ul>
-
-		<div class="panel">
-
-			<p><!-- put widgets here or something --></p>
 		</div>
+	</main>
 
-	</aside>
-
-	<!-- End Sidebar -->
 </div>
 
-<!-- End Main Content and Sidebar -->
 
-
-<!-- Footer -->
-
-<footer class="row">
-	<div class="large-12 columns">
-		<hr/>
+<footer class="container-fluid">
+	<div class="col-xs-12">
 		<div class="row">
 
-			<div class="large-6 columns">
-				<p>
-					<a href="http://aetheric.co.nz/">Aetheric Engineering</a>
-					<span>/</span>
-					<a href="/about">Tzrlk</a>
-				</p>
-			</div>
-
-			<div class="large-6 columns" style="text-align:right">
-				<a href="https://stackexchange.com/users/18122">
-					<img src="https://stackexchange.com/users/flair/18122.png?theme=clean"
-					     width="208" height="58" alt="Tzrlk on Stackexchange"/>
-				</a>
-			</div>
+			<ol class="breadcrumb">
+				<li><a href="http://aetheric.co.nz/">Aetheric Engineering</a></li>
+				<li><a href="">Tzrlk</a></li>
+				<li class="active">Building an RPG on WaRP: </li>
+			</ol>
 
 		</div>
 	</div>
 </footer>
 
-<script src="/js/vendor/jquery.js"></script>
-<script src="/js/foundation.min.js"></script>
-<script>
-	$(document).foundation();
-	var doc = document.documentElement;
-	doc.setAttribute('data-useragent', navigator.userAgent);
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+<!-- Polyfills -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+        integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"
+        integrity="sha256-t6SrqvTQmKoGgi5LOl0AUy+lBRtIvEJ+++pLAsfAjWs="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-placeholder/2.3.1/jquery.placeholder.min.js"
+        integrity="sha256-vo4hFjZ2XisF8ql7P6kGVCDAbuW68h6P2WunwD+QI54="
+        crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"
+        integrity="sha256-uZbIqasulk7Y9yEwknbeQ0FpF3aUhtPwuggbpvQaI8Y="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"
+        integrity="sha256-TY/EO/++Ug/P+fSBjaqlmtuphCBKwlP7TOnS+SGnN8g="
+        crossorigin="anonymous"></script>
+
+<script src="/js/toc.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#toc').toc({
+		headers: 'h2, h3',
+		listClasses: 'nav nav-pills nav-stacked'
+	});
+});
 </script>
+
 </body>
 </html>

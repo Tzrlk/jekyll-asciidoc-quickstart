@@ -1,49 +1,112 @@
 <!doctype html>
-<!--[if IE 9]>
-<html class="lt-ie10" lang="en" itemscope itemtype="http://schema.org/Blog"> <![endif]-->
-<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)" itemscope itemtype="http://schema.org/Blog">
+<html lang="en" itemscope itemtype="http://schema.org/Blog">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title itemprop="name">Warlock Woes</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title itemprop="name">Tzrlk: Warlock Woes</title>
+
 	<meta name="description" itemprop="description"
-	      content="The personal page of Peter Cummuskey">
-	<meta name="author" content="Peter Cummuskey" itemprop="author">
-	<meta name="copyright" content="Peter Cummuskey 2016">
-	<link rel="stylesheet" href="/css/foundation.css">
-	<link rel="stylesheet" href="/css/font-awesome.css">
-	<link rel="stylesheet" href="/css/coderay.css">
-	<link rel="stylesheet" href="/css/asciidoctor.css">
-	<script src="/js/vendor/modernizr.js"></script>
-	<script src="/js/toc.js"></script>
+	      content="The personal site of Peter Cummuskey" />
+
+	<meta name="author" itemprop="author"
+	      content="Peter Cummuskey" />
+
+	<meta name="copyright"
+	      content="Peter Cummuskey 2016" />
+
+	<!-- Assets -->
+	<link rel="stylesheet"
+	      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+	      integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0="
+	      crossorigin="anonymous" />
+
+	<!-- CONSIDER SWITCHING TO http://bulma.io/
+	<link rel="stylesheet"
+	      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.min.css"
+	      integrity="sha256-n+Ch7oRdzZ9+8/inp+1mK/0Bt4T/2PSmo4L6YGoDiVM="
+	      crossorigin="anonymous" />-->
+
+	<!-- Styles -->
+	<link rel="stylesheet"
+	      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"
+	      integrity="sha256-HxaKz5E/eBbvhGMNwhWRPrAR9i/lG1JeT4mD6hCQ7s4="
+	      crossorigin="anonymous" />
+	<link rel="stylesheet"
+	      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+	      integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w="
+	      crossorigin="anonymous" />
+	<link rel="stylesheet"
+	      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/bootstrap-material-design.min.css"
+	      integrity="sha256-j3CLSRG31GkOu6kaeLh7XsRgL2YNvRl9aOtXoAYt320="
+	      crossorigin="anonymous" />
+	<link rel="stylesheet"
+	      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/ripples.min.css"
+	      integrity="sha256-+Og2qJI9qzvKYwhGo/LYXg0FzE1BhEQfDsUSjKXQ3Bg="
+	      crossorigin="anonymous" />
+	<link rel="stylesheet"
+	      href="https://cdn.rawgit.com/richleland/pygments-css/master/tango.css" />
+
 </head>
 <body>
 
 
 <!-- Nav Bar -->
 
-<nav class="top-bar" data-topbar>
-	<ul class="title-area">
-		<!-- Title Area -->
-		<li class="name">
-			<h1>
-				<a href="/">Tzrlk</a>
-			</h1>
-		</li>
-		<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-	</ul>
+<nav class="navbar navbar-default" data-topbar>
+	<div class="container-fluid">
+
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-top" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">Tzrlk</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="nav-top">
+			<ul class="nav navbar-nav">
+
+				<li role="presentation">
+					<a href="/about">About Me</a>
+				</li>
+
+			</ul>
+		</div>
+
+	</div>
 </nav>
 <!-- End Nav -->
 
 
-<!-- Main Page Content and Sidebar -->
+<div class="container-fluid">
 
-<div class="row">
+	<aside class="col-md-3 col-lg-2">
+		<div class="row">
 
-	<!-- Main Blog Content -->
-	<div class="large-9 columns" role="content">
+			<nav class="col-xs-12 col-sm-4 col-md-12">
+				<h4>Contents</h4>
+				<div id="toc"></div>
+			</nav>
 
-		<div class="post" itemscope itemtype="http://schema.org/BlogPosting">
+			<section class="col-xs-12 col-sm-4 col-md-12">
+				<h4>Flair</h4>
+				<a href="https://stackexchange.com/users/18122" class="panel">
+					<img src="https://stackexchange.com/users/flair/18122.png?theme=clean"
+					     width="208" height="58" alt="Tzrlk on Stackexchange"/>
+				</a>
+			</section>
+
+		</div>
+	</aside>
+
+	<main class="col-md-9 col-lg-10" role="content">
+		<div class="container" style="margin-left: 0;">
+
+			<div class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
 	<header class="post-header">
 		<h1 class="post-title" itemprop="name">Warlock Woes</h1>
@@ -60,141 +123,121 @@
 	</header>
 
 	<article class="post-content" itemprop="articleBody">
-		<p itemprop="description"></p>
-		<div class="paragraph">
+		<p>Having played the 5e Warlock a couple of times, and heard a lot of talk about how underpowered it is, I’m giving a go at some potential fixes.</p>
+
 <p>A few people have already had a go at this problem:</p>
-</div>
-<div class="ulist">
+
 <ul>
-<li>
-<p><a href="https://standsinfire.wordpress.com/2015/08/09/dnd-5e-re-keying-the-warlock/">Stands In Fire: Re-keying the Warlock</a></p>
-</li>
-<li>
-<p><a href="https://www.reddit.com/r/dndnext/comments/2z76b6/revised_warlock_blade_pact/">/r/dndnext: Revised Warlock Blade Pact</a></p>
-</li>
-<li>
-<p><a href="http://harbinger-of-doom.blogspot.co.nz/2015/03/d-5e-problems-in-warlock-design.html">Harbinger of Doom: Problems in the Warlock Design</a></p>
-</li>
+  <li>
+    <p><a href="https://standsinfire.wordpress.com/2015/08/09/dnd-5e-re-keying-the-warlock/">Stands In Fire: Re-keying the
+Warlock</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.reddit.com/r/dndnext/comments/2z76b6/revised_warlock_blade_pact/">/r/dndnext: Revised Warlock Blade
+Pact</a></p>
+  </li>
+  <li>
+    <p><a href="http://harbinger-of-doom.blogspot.co.nz/2015/03/d-5e-problems-in-warlock-design.html">Harbinger of Doom: Problems in the Warlock
+Design</a></p>
+  </li>
 </ul>
-</div>
-<div class="paragraph">
+
 <p>And of course, there are always the character optimisation guides:</p>
-</div>
-<div class="ulist">
+
 <ul>
-<li>
-<p><a href="http://rpgbot.net/dnd5/characters/classes/warlock/">RPG BOT: The Warlock Handbook</a></p>
-</li>
+  <li><a href="http://rpgbot.net/dnd5/characters/classes/warlock/">RPG BOT: The Warlock
+Handbook</a></li>
 </ul>
-</div>
-<div class="paragraph">
-<p>The approach I&#8217;d like to take on this is to offer a straightforward update that makes Warlock&#8217;s competitive with the least amount of effort. The fix consists of just a few minor modifications:</p>
-</div>
-<div class="ulist">
+
+<p>The approach I’d like to take on this is to offer a straightforward update that makes Warlock’s competitive with the least amount of effort. The fix consists of just a few minor modifications:</p>
+
 <ul>
-<li>
-<p>Add Patron spells to Spells Known instead of the regular spell list.</p>
-</li>
-<li>
-<p>Just add all the 1/day spell invocations to the regular spell list.</p>
-</li>
-<li>
-<p>Increase the number of spell slots by 1.</p>
-</li>
-<li>
-<p>Increase the number of invocations by 2.</p>
-</li>
-<li>
-<p>Convert pact boons into invocations.</p>
-</li>
+  <li>
+    <p>Add Patron spells to Spells Known instead of the regular spell list.</p>
+  </li>
+  <li>
+    <p>Just add all the 1/day spell invocations to the regular spell list.</p>
+  </li>
+  <li>
+    <p>Increase the number of spell slots by 1.</p>
+  </li>
+  <li>
+    <p>Increase the number of invocations by 2.</p>
+  </li>
+  <li>
+    <p>Convert pact boons into invocations.</p>
+  </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>Now, there are a good number of other grievances I have with the class, but none of them can be solved with quick fixes like the one above. One of the good things that 4th edition did was look at exactly what roles each class has in a party, and set the Warlock as a high-DPR "Striker" type. The 5th edition version of the Warlock definitely has all the bits needed to make it a high-damage striker, but that creates a necessary feature tax that means you can&#8217;t be much else.</p>
-</div>
-<div class="paragraph">
-<p>Really, I&#8217;d like to know exactly what the Warlock is <em>for</em>, so the various mechanics can be altered to suit. Originally the warlock was all about the eldritch blast, and having various ways of altering it, as well as some nifty tricks. The thing that made warlocks particularly interesting is that unlike pretty much every other magic class, they could go all-day.</p>
-</div>
-<div class="paragraph">
-<p>There have been some attempts at adding blast-shape invocations to the Warlock to capture the feel of the original again, but with each class I look at and end up unhappy with, I think, <em>how would the Book of Nine Swords build it?</em> The mechanics there were awesome, because they created an opportunity for martial classes to have various kinds of interesting gameplay. It wasn&#8217;t perfect, but it leads us down a train of thought.</p>
-</div>
-<div class="paragraph">
-<p>If one were to apply a similar thought process to the Warlock, you&#8217;d want to add a number of blast shapes and bizarre tactical abilities that can be selected as you level. I&#8217;d also probably replace the spellcasting with Truenamer Utterances from Tome of Magic. This would retain the can-go-all-day vibe of the Warlock without being too much of a pain. You might even be able to do away with Invocations by converting them into Utterances, and making the pact boon stuff just part of the class features.</p>
-</div>
-<div class="paragraph">
-<p>I planned for this post to be a lot more comprehensive and well-thought-out, but I reason that its probably better to get my bullshit stream-of-consciousness ranting published rather than languishing forever in my drafts folder. I&#8217;ll probably do a follow-up at some point to add in some concrete implementation suggestions.</p>
-</div>
+
+<p>Now, there are a good number of other grievances I have with the class, but none of them can be solved with quick fixes like the one above. One of the good things that 4th edition did was look at exactly what roles each class has in a party, and set the Warlock as a high-DPR “Striker” type. The 5th edition version of the Warlock definitely has all the bits needed to make it a high-damage striker, but that creates a necessary feature tax that means you can’t be much else.</p>
+
+<p>Really, I’d like to know exactly what the Warlock is <em>for</em>, so the various mechanics can be altered to suit. Originally the warlock was all about the eldritch blast, and having various ways of altering it, as well as some nifty tricks. The thing that made warlocks particularly interesting is that unlike pretty much every other magic class, they could go all-day.</p>
+
+<p>There have been some attempts at adding blast-shape invocations to the Warlock to capture the feel of the original again, but with each class I look at and end up unhappy with, I think, <em>how would the Book of Nine Swords build it?</em> The mechanics there were awesome, because they created an opportunity for martial classes to have various kinds of interesting gameplay. It wasn’t perfect, but it leads us down a train of thought.</p>
+
+<p>If one were to apply a similar thought process to the Warlock, you’d want to add a number of blast shapes and bizarre tactical abilities that can be selected as you level. I’d also probably replace the spellcasting with Truenamer Utterances from Tome of Magic. This would retain the can-go-all-day vibe of the Warlock without being too much of a pain. You might even be able to do away with Invocations by converting them into Utterances, and making the pact boon stuff just part of the class features.</p>
+
+<p>I planned for this post to be a lot more comprehensive and well-thought-out, but I reason that its probably better to get my bullshit stream-of-consciousness ranting published rather than languishing forever in my drafts folder. I’ll probably do a follow-up at some point to add in some concrete implementation suggestions.</p>
+
 	</article>
 
 </div>
 
 
-	</div>
-
-	<!-- End Main Content -->
-
-	<!-- Sidebar -->
-
-	<aside class="large-3 columns">
-
-		<h4>Posts</h4>
-		<ul id="posts" class="posts nav">
-			
-			<li><a href="/2016/12/27/warlock-woes.html">Warlock Woes</a></li>
-			
-			<li><a href="/2016/11/23/building-an-rpg-on-warp.html">Building an RPG on WaRP</a></li>
-			
-			<li><a href="/2016/11/07/understandable-frustration.html">Understandable Frustration</a></li>
-			
-			<li><a href="/2016/11/05/new-beginning.html">New Beginning</a></li>
-			
-		</ul>
-
-		<div class="panel">
-
-			<p><!-- put widgets here or something --></p>
 		</div>
+	</main>
 
-	</aside>
-
-	<!-- End Sidebar -->
 </div>
 
-<!-- End Main Content and Sidebar -->
 
-
-<!-- Footer -->
-
-<footer class="row">
-	<div class="large-12 columns">
-		<hr/>
+<footer class="container-fluid">
+	<div class="col-xs-12">
 		<div class="row">
 
-			<div class="large-6 columns">
-				<p>
-					<a href="http://aetheric.co.nz/">Aetheric Engineering</a>
-					<span>/</span>
-					<a href="/about">Tzrlk</a>
-				</p>
-			</div>
-
-			<div class="large-6 columns" style="text-align:right">
-				<a href="https://stackexchange.com/users/18122">
-					<img src="https://stackexchange.com/users/flair/18122.png?theme=clean"
-					     width="208" height="58" alt="Tzrlk on Stackexchange"/>
-				</a>
-			</div>
+			<ol class="breadcrumb">
+				<li><a href="http://aetheric.co.nz/">Aetheric Engineering</a></li>
+				<li><a href="">Tzrlk</a></li>
+				<li class="active">Warlock Woes: </li>
+			</ol>
 
 		</div>
 	</div>
 </footer>
 
-<script src="/js/vendor/jquery.js"></script>
-<script src="/js/foundation.min.js"></script>
-<script>
-	$(document).foundation();
-	var doc = document.documentElement;
-	doc.setAttribute('data-useragent', navigator.userAgent);
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+<!-- Polyfills -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+        integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"
+        integrity="sha256-t6SrqvTQmKoGgi5LOl0AUy+lBRtIvEJ+++pLAsfAjWs="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-placeholder/2.3.1/jquery.placeholder.min.js"
+        integrity="sha256-vo4hFjZ2XisF8ql7P6kGVCDAbuW68h6P2WunwD+QI54="
+        crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"
+        integrity="sha256-uZbIqasulk7Y9yEwknbeQ0FpF3aUhtPwuggbpvQaI8Y="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"
+        integrity="sha256-TY/EO/++Ug/P+fSBjaqlmtuphCBKwlP7TOnS+SGnN8g="
+        crossorigin="anonymous"></script>
+
+<script src="/js/toc.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#toc').toc({
+		headers: 'h2, h3',
+		listClasses: 'nav nav-pills nav-stacked'
+	});
+});
 </script>
+
 </body>
 </html>
