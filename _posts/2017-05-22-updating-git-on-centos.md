@@ -17,44 +17,48 @@ A bunch of people suggested just changing the repo url in your /etc/yum.repos.d/
 The quick guide to installing the latest git on Centos is fairly straightforward:
 
 {% highlight shell %}
-# Update certs package:
-yum update ca-certificates
 
-# Install Company CA Certificate:
-update-ca-trust force-enable
-cp ${certfile} /etc/pki/ca-trust/source/anchors/
-update-ca-trust extract
+	# Update certs package:
+	yum update ca-certificates curl nss
 
-# Install IUS repo:
-rpm -i https://centos${version}.iuscommunity.org/ius-release.rpm || {
+	# Install Company CA Certificate:
+	update-ca-trust force-enable
+	cp ${certfile} /etc/pki/ca-trust/source/anchors/
+	update-ca-trust extract
 
-	# If there's trouble installing the epel releases repo:
-	rpm -i https://dl.fedoraproject.org/pub/epel/epel-release-latest-${version}.noarch.rpm
-	
-	# Then just repeat the ius install.
-	rpm -i https://centos${version}.iuscommunity.org/ius-release.rpm
+	# Install IUS repo:
+	rpm -i https://centos${version}.iuscommunity.org/ius-release.rpm || {
 
-}
+		# If there's trouble installing the epel releases repo:
+		rpm -i https://dl.fedoraproject.org/pub/epel/epel-release-latest-${version}.noarch.rpm
 
-# Update yum cache and install git:
+		# Then just repeat the ius install.
+		rpm -i https://centos${version}.iuscommunity.org/ius-release.rpm
 
-yum makecache fast
-yum install git2u -y || {
+	}
 
-	# If there's trouble installing the git package:
-	yum clean all
-
-	# Then just repeat the install.
+	# Update yum cache and install git:
 	yum makecache fast
-	yum install git2u -y
+	yum install git2u -y || {
 
-}
+		# If there's trouble installing the git package:
+		yum clean all
 
-# You may need to log-out and log-in again to get the shell to refresh your git version, but after that, everything should be working just fine.
+		# Then just repeat the install.
+		yum makecache fast
+		yum install git2u -y
+	
+	}
 
+	# You may need to log-out and log-in again to get the shell to refresh your git
+	#     version, but after that, everything should be working just fine.
+	
 {% endhighlight %}
 
 ## The Conclusion
 
 Thankfully, you'll only need to ever do the first part once. Steps 4-5 may be necessary for other packages however. It's a pain that it doesn't tell you that the issue is an SSL cert trust failure, but googling the error turns up plenty of help. Hopefully this one will get some notice.
 
+## Update!
+
+Apparently, something has happened recently that caused even this method to not work properly. After some grey hairs and crying, I figured-out that the `nss` package needed updating as well as `curl`. Once that was complete, everything worked fine again. I've updated the script accordingly.
