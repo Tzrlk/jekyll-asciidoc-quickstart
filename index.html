@@ -18,19 +18,20 @@ layout: page
 				<div class="media-body">
 
 					<p class="post-meta pull-right">
+						<span itemprop="keywords">{{ post.tags | join: ', ' }}</span>
 						<time itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">
 							{{ post.date | date: "%-d %b, %Y" }}
 						</time>
-						<span itemprop="keywords">{{ post.tags | join: ', ' }}</span>
 					</p>
 
 					<h2 class="media-heading" id="{{ post.slug }}" itemprop="name">{{ post.title }}</h2>
 
-					<a href="{{ post.url | prepend: site.baseurl }}" itemprop="url" role="button">
-						<div class="entry" itemprop="description">
-							{{ post.excerpt }}
-						</div>
-					</a>
+					<p class="entry">
+						<span itemprop="description">{{ post.excerpt | remove '<p>' | remove: '</p>' }}</span>
+						<a href="{{ post.url | prepend: site.baseurl }}" itemprop="url" role="button">
+							<span>read more&hellip;</span>
+						</a>
+					</p>
 				
 				</div>
 
