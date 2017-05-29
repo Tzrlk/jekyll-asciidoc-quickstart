@@ -27,7 +27,7 @@ layout: page
 					<h2 class="media-heading" id="{{ post.slug }}" itemprop="name">{{ post.title }}</h2>
 
 					<p class="entry">
-						<span itemprop="description">{{ post.excerpt | remove '<p>' | remove: '</p>' }}</span>
+						<span itemprop="description">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</span>
 						<a href="{{ post.url | prepend: site.baseurl }}" itemprop="url" role="button">
 							<span>read more&hellip;</span>
 						</a>
