@@ -1,11 +1,10 @@
----
 
 backend:
   name: github
   repo: tzrlk/tzrlk.github.io
   branch: master
 
-media_folder: 'img'
+media_folder: "img"
 
 collections:
 
@@ -13,22 +12,22 @@ collections:
     label: Blog
     folder: _posts
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: Layout,         name: layout,     widget: hidden,                   default: post }
-      - { label: Title,          name: title,      widget: string   }
-      - { label: Tags,           name: tags,       widget: list,     required: false }
-      - { label: Categories,     name: categories, widget: list,     required: false }
-      - { label: Publish Date,   name: date,       widget: datetime }
-      - { label: Featured Image, name: thumbnail,  widget: image,    required: false }
-      - { label: Body,           name: body,       widget: markdown }
+      - { label: "Layout",         name: layout,     widget: hidden,                    default: post }
+      - { label: "Title",          name: title,      widget: string   }
+      - { label: "Tags",           name: tags,       widget: list,     required: false }
+      - { label: "Categories",     name: categories, widget: list,     required: false }
+      - { label: "Publish Date",   name: date,       widget: datetime }
+      - { label: "Featured Image", name: thumbnail,  widget: image,    required: false }
+      - { label: "Body",           name: body,       widget: markdown }
 
   - name: pages
     label: Pages
     folder: _pages
     create: false
-    slug: '{{slug}}'
+    slug: "{{slug}}"
     fields:
-      - { label: Layout,         name: layout,    widget: hidden,                    default: post }
-      - { label: Title,          name: title,     widget: string   }
-      - { label: Body,           name: body,      widget: markdown }
+      - { label: "Layout",         name: layout,    widget: hidden,                     default: post }
+      - { label: "Title",          name: title,     widget: string   }
+      - { label: "Body",           name: body,      widget: markdown }
