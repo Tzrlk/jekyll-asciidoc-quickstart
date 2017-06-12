@@ -1,6 +1,12 @@
 ---
+layout: post
 title: Updating Git on Centos 6/7
-tags:  sysadmin linux centos
+tags:
+  - sysops
+  - linux
+  - centos
+date: 2017-05-22T00:00:00.000Z
+published: true
 ---
 
 So, I had to update git on a couple of Centos machines last week, and I ran into what appears to be a very common problem: Centos only has old versions of stuff in its repos. Subsequently, I had to figure out how to get the latest, and preferably from a yum repo, rather than installing it manually. Cue repo connection issues.

@@ -1,11 +1,8 @@
 ---
+layout: page
 title: About Me
-layout: default
-page-liquid: true
 root: ../../../
 ---
-
-# {{ page.title }}
 
 <div itemscope itemtype="http://schema.org/Person">
 

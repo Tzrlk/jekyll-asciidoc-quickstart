@@ -1,6 +1,12 @@
 ---
+layout: post
 title: Building an RPG on WaRP
-tags: rpgs systems
+tags:
+  - rpgs
+  - systems
+date: 2016-11-23T00:00:00.000Z
+thumbnail: null
+published: true
 ---
 
 I've been working on my own RPG for a while, and after at just a decade, think that WaRP is a good base. I think about role-playing systems a lot, reading through everything I can get my hands on and critiquing each asked for how well it fulfills it's purpose in making the game fun.

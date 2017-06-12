@@ -1,6 +1,12 @@
 ---
+layout: post
 title: Understandable Frustration
-tags: testing rant
+tags:
+  - testing
+  - rant
+date: 2016-11-07T00:00:00.000Z
+thumbnail: null
+published: true
 ---
 
 With any luck, venting about this here will lead me to the correct answer via the highly effective process of [Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging).

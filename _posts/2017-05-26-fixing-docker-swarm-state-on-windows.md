@@ -1,6 +1,14 @@
 ---
+layout: post
 title: Fixing Docker Swarm state on Windows
-tags: docker docker-swarm devops windows
+tags:
+  - docker
+  - docker-swarm
+  - devops
+  - windows
+date: 2017-05-26T00:00:00.000Z
+thumbnail: null
+published: false
 ---
 
 So, after smashing my head against the desk for a good few hours, I finally figured-out how to clear a 'pending' docker swarm state, and get things back-on-track.

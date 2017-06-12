@@ -1,6 +1,11 @@
 ---
+layout: post
 title: Why use Markdown for Jekyll sites?
-tags: misc meta
+tags:
+  - misc
+  - meta
+date: 2017-05-05T00:00:00.000Z
+thumbnail: null
 published: false
 ---
 

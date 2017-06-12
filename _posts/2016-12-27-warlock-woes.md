@@ -1,6 +1,12 @@
 ---
+layout: post
 title: Warlock Woes
-tags: rpgs dnd5
+tags:
+  - rpgs
+  - dnd5
+date: 2016-12-27T00:00:00.000Z
+thumbnail: null
+published: true
 ---
 
 Having played the 5e Warlock a couple of times, and heard a lot of talk about how underpowered it is, I'm giving a go at some potential fixes.

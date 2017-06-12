@@ -1,6 +1,12 @@
 ---
+layout: post
 title: New Beginning
-categories: misc meta
+tags:
+  - misc
+  - meta
+date: 2016-11-05T00:00:00.000Z
+thumbnail: null
+published: true
 ---
 
 No idea how long this will last, but at least it's up and running. I've made a resolution to actually maintain a personal site so I can blog about the sort of crap I do development-wise. I've tried using blogging platforms, but I'd much rather handle my blogging via version control.
