@@ -7,6 +7,7 @@ timezone: 'Pacific/Auckland'
 
 safe: false
 markdown: kramdown
+incremental: true
 
 include:
   - .travis.yml
