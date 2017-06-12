@@ -1,39 +1,33 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://tzrlk.aetheric.co.nz//misc/meta/2016/11/05/new-beginning.html</loc>
-        <lastmod>2017-06-12T14:58:13+12:00</lastmod>
+        <loc>http://tzrlk.aetheric.co.nz//2016/11/05/new-beginning.html</loc>
+        <lastmod>2017-06-12T15:12:45+12:00</lastmod>
     </url>
     <url>
         <loc>http://tzrlk.aetheric.co.nz//2016/11/07/understandable-frustration.html</loc>
-        <lastmod>2017-06-12T14:58:13+12:00</lastmod>
+        <lastmod>2017-06-12T15:12:45+12:00</lastmod>
     </url>
     <url>
         <loc>http://tzrlk.aetheric.co.nz//2016/11/23/building-an-rpg-on-warp.html</loc>
-        <lastmod>2017-06-12T14:58:13+12:00</lastmod>
+        <lastmod>2017-06-12T15:12:45+12:00</lastmod>
     </url>
     <url>
         <loc>http://tzrlk.aetheric.co.nz//2016/12/27/warlock-woes.html</loc>
-        <lastmod>2017-06-12T14:58:13+12:00</lastmod>
+        <lastmod>2017-06-12T15:12:45+12:00</lastmod>
     </url>
     <url>
         <loc>http://tzrlk.aetheric.co.nz//2017/05/22/updating-git-on-centos.html</loc>
-        <lastmod>2017-06-12T14:58:13+12:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://tzrlk.aetheric.co.nz//2017/05/26/fixing-docker-swarm-state-on-windows.html
-        </loc>
-        <lastmod>2017-06-12T14:58:13+12:00</lastmod>
+        <lastmod>2017-06-12T15:12:45+12:00</lastmod>
     </url>
     <url>
         <loc>
             http://tzrlk.aetheric.co.nz//tech/devops/2017/06/12/installing-rancheros-on-bare-metal.html
         </loc>
-        <lastmod>2017-06-12T14:58:13+12:00</lastmod>
+        <lastmod>2017-06-12T15:12:45+12:00</lastmod>
     </url>
     <url>
         <loc>http://tzrlk.aetheric.co.nz//</loc>
-        <lastmod>2017-06-12T14:58:13+12:00</lastmod>
+        <lastmod>2017-06-12T15:12:45+12:00</lastmod>
     </url>
 </urlset>
