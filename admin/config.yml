@@ -2,7 +2,7 @@
 backend:
   name: github
   repo: tzrlk/tzrlk.github.io
-  branch: master
+  branch: sources
 
 media_folder: "img"
 
