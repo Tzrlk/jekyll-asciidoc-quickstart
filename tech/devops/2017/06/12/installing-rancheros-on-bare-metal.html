@@ -123,21 +123,152 @@
 	</header>
 
 	<article class="post-content" itemprop="articleBody">
-		<ul>
-  <li>Download the iso</li>
-  <li>Install it to bootable media</li>
-  <li>Boot the os</li>
-  <li>Set up the network settings</li>
-  <li>Reload the network</li>
-  <li>Change the rancher password</li>
-  <li>SSH into the box</li>
-  <li>Set up the cloud-config.yml file</li>
-  <li>Wipe the hd partitions</li>
-  <li>Pull the latest os installer image</li>
-  <li>Scp the result of docker save to the box</li>
-  <li>Docker load the image into system-docker</li>
-  <li>Run the ros installer on the hd</li>
-</ul>
+		<p>Getting RancherOS installed on bare metal is a pain if you don’t know all the steps. I had to figure these out from the various bits of documentation scattered-around the place. Docker + corporate proxy = a pain in the ass.</p>
+
+<h2 id="setup">Setup</h2>
+
+<ol>
+  <li>
+    <dl>
+      <dt>Download the iso</dt>
+      <dd>Just grab the latest iso from the <a href="https://github.com/rancher/os/releases">RancherOS github releases</a>.</dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt>Install it to bootable media</dt>
+      <dd>This can be done via a number of means. I originally ran <a href="https://rufus.akeo.ie/">Rufus</a> to do the job</dd>
+      <dd>With subsequent installs I’ll be going with <code class="highlighter-rouge">dd if=rancheros.iso of=/dev/sdx</code> (where <code class="highlighter-rouge">sdx</code> is whatever the usb device is).</dd>
+      <dd>Apparently <a href="http://clonezilla.org/">Clonezilla</a> is also an option, but the simplicity of <code class="highlighter-rouge">dd</code> makes it pretty damn appealing.</dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt>Boot the OS</dt>
+      <dd>Just make sure that the system will accept booting from the usb drive. This may require turning-off secure boot and using the legacy features.</dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt>Change the rancher password</dt>
+      <dd>Just run <code class="highlighter-rouge">sudo passwd rancher</code>, followed by something like <code class="highlighter-rouge">password</code> and <code class="highlighter-rouge">password</code>. Ignore the errors, it should work just fine regardless. Once done, you’ll be able to ssh and scp into the box just fine.</dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt>Set up the cloud-config.yml file</dt>
+      <dd>Put whatever config you need in a cloud-config.yml file, and get it onto the box via ssh or scp.</dd>
+      <dd>You can do all the configuration via <code class="highlighter-rouge">sudo ros config set</code>, but that can become a pain <em>really</em> quickly, so it’s just easier to write it once and use <code class="highlighter-rouge">sudo ros config validate -i cloud-config.yml</code> and <code class="highlighter-rouge">sudo ros config merge -i cloud-config.yml</code> to apply it. I’ll put a sample config below.</dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt>Wipe the hd partitions</dt>
+      <dd>This is fairly easy, as a simple <code class="highlighter-rouge">sudo fdisk /dev/sda &lt;enter&gt; d &lt;enter&gt; w</code>, should wipe the partition table for the primary HD, making it ready for install.</dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt>Pull the latest os installer image</dt>
+      <dd>Assuming you’ve updated the relevant network settings, you can make sure they’re applied by running <code class="highlighter-rouge">sudo system-docker restart docker</code>, <code class="highlighter-rouge">sudo system-docker restart network</code>, then running <code class="highlighter-rouge">docker pull rancher/os:vX.X.X</code> and/or <code class="highlighter-rouge">sudo system-docker pull rancher/os:vX.X.X</code>.</dd>
+      <dd>Alternately <code class="highlighter-rouge">docker save</code> and <code class="highlighter-rouge">docker load</code> 
+ combined with <code class="highlighter-rouge">scp</code> can be used to bypass <code class="highlighter-rouge">docker pull</code> if that’s being a pain.</dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt>Run the ros installer on the hd</dt>
+      <dd>The final step, you should have a <code class="highlighter-rouge">cloud-config.yml</code> available, as well as the <code class="highlighter-rouge">rancher/os:vX.X.X</code> image pulled to the repo. Now you just need to run <code class="highlighter-rouge">sudo ros install -i rancher/os:vX.X.X -c cloud-config.yml -d /dev/sda</code> and wait for it to finish and reboot.</dd>
+    </dl>
+  </li>
+</ol>
+
+<h2 id="config-example">Config Example</h2>
+
+<p>This is an obfuscated version of my current working config, so some of it may or may not be necessary for your purposes (or even at all). As far as I know, there’s no variable substitution, so replace all the <code class="highlighter-rouge">${...}</code> instances with actual values (hence <code class="highlighter-rouge">PROXY_HTTP</code> instead of <code class="highlighter-rouge">HTTP_PROXY</code>).</p>
+
+<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">rancher</span><span class="pi">:</span>
+
+  <span class="s">environment</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">EXTRA_CMDLINE=/init</span>
+    <span class="pi">-</span> <span class="s">HTTP_PROXY=${PROXY_HTTP}</span>
+    <span class="pi">-</span> <span class="s">HTTPS_PROXY=${PROXY_HTTPS}</span>
+    <span class="pi">-</span> <span class="s">NO_PROXY=${PROXY_EXCLUDE}</span>
+
+  <span class="s">network</span><span class="pi">:</span>
+    <span class="s">dns</span><span class="pi">:</span>
+      <span class="s">nameservers</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">${DNS_IP_1}</span>
+        <span class="pi">-</span> <span class="s">${DNS_IP_2}</span>
+      <span class="s">search</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">${COMPANYDOMAIN_LOCAL}</span>
+    <span class="s">interfaces</span><span class="pi">:</span>
+      <span class="s">eth0</span><span class="pi">:</span>
+        <span class="s">dhcp</span><span class="pi">:</span>    <span class="s">true</span>
+        <span class="s">gateway</span><span class="pi">:</span> <span class="s">${GATEWAY_IP}</span>
+    <span class="s">http_proxy</span><span class="pi">:</span>  <span class="s">${PROXY_HTTP}</span>
+    <span class="s">https_proxy</span><span class="pi">:</span> <span class="s">${PROXY_HTTPS}</span>
+    <span class="s">no_proxy</span><span class="pi">:</span>    <span class="s">${PROXY_EXCLUDE}</span>
+
+  <span class="s">services</span><span class="pi">:</span>
+
+    <span class="c1"># If you're using convoy</span>
+    <span class="s">convoy</span><span class="pi">:</span>
+      <span class="s">name</span><span class="pi">:</span>  <span class="s">convoy</span>
+      <span class="s">image</span><span class="pi">:</span> <span class="s">evansgp/convoy-daemon:latest</span>
+      <span class="s">command</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">daemon</span>
+        <span class="pi">-</span> <span class="s">--drivers     devicemapper</span>
+        <span class="pi">-</span> <span class="s">--driver-opts dm.datadev=/dev/sdb1</span>
+        <span class="pi">-</span> <span class="s">--driver-opts dm.metadatadev=/dev/sdb2</span>
+      <span class="s">privileged</span><span class="pi">:</span> <span class="s">true</span>
+      <span class="s">restart</span><span class="pi">:</span>    <span class="s">always</span>
+      <span class="s">labels</span><span class="pi">:</span>
+        <span class="s">io.rancher.os.scope</span><span class="pi">:</span> <span class="s">system</span>
+        <span class="s">io.rancher.os.after</span><span class="pi">:</span> <span class="s">docker</span>
+      <span class="s">volumes</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">/var/run/docker.sock:/var/run/docker.sock</span>
+        <span class="pi">-</span> <span class="s">/etc/docker/plugins:/etc/docker/plugins</span>
+        <span class="pi">-</span> <span class="s">/dev/sdb1:/dev/sdb1</span>
+        <span class="pi">-</span> <span class="s">/dev/sdb2:/dev/sdb2</span>
+      <span class="s">volumes_from</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">all-volumes</span>
+
+    <span class="s">rancher-agent</span><span class="pi">:</span>
+      <span class="s">name</span><span class="pi">:</span>        <span class="s">rancher-agent</span>
+      <span class="s">image</span><span class="pi">:</span>       <span class="s">rancher/agent:v1.2.2</span>
+      <span class="s">command</span><span class="pi">:</span>     <span class="s">http://${RANCHER_HOST_PORT}/v1/scripts/${RANCHER_CODE}</span>
+      <span class="s">privileged</span><span class="pi">:</span>  <span class="s">true</span>
+      <span class="s">autodestroy</span><span class="pi">:</span> <span class="s">always</span>
+      <span class="s">volumes</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">/var/run/docker.sock:/var/run/docker.sock</span>
+      <span class="s">labels</span><span class="pi">:</span>
+        <span class="s">io.rancher.os.after</span><span class="pi">:</span> <span class="s">docker</span>
+
+  <span class="s">services_include</span><span class="pi">:</span>
+    <span class="s">rancher-server</span><span class="pi">:</span> <span class="s">true</span>
+
+  <span class="s">system_docker</span><span class="pi">:</span>
+    <span class="s">environment</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">HTTP_PROXY=${PROXY_HTTP}</span>
+    <span class="pi">-</span> <span class="s">HTTPS_PROXY=${PROXY_HTTPS}</span>
+    <span class="pi">-</span> <span class="s">NO_PROXY=${PROXY_EXCLUDE}</span>
+
+<span class="s">write_files</span><span class="pi">:</span>
+
+  <span class="pi">-</span> <span class="s">path</span><span class="pi">:</span> <span class="s">/opt/rancher/bin/start.sh</span>
+    <span class="s">permissions</span><span class="pi">:</span> <span class="s2">"</span><span class="s">0755"</span>
+    <span class="s">owner</span><span class="pi">:</span> <span class="s">root</span>
+    <span class="s">content</span><span class="pi">:</span> <span class="pi">|</span>
+      <span class="no">#!/bin/bash</span>
+      <span class="no">alias convoy='sudo system-docker exec -it --privileged convoy convoy'</span>
+
+<span class="s">ssh_authorized_keys</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">${PUBLIC_KEY_1}</span>
+  <span class="pi">-</span> <span class="s">${PUBLIC_KEY_2}</span> <span class="c1"># etc.</span>
+
+</code></pre>
+</div>
 
 	</article>
 
