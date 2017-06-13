@@ -48,120 +48,131 @@
 	<link rel="stylesheet"
 	      href="https://cdn.rawgit.com/richleland/pygments-css/master/tango.css" />
 
+	<link rel="stylesheet"
+	      href="{{ site.baseurl }}/css/sticky-footer.css" />
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+	        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	        crossorigin="anonymous"></script>
+
+	<!-- Polyfills -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+	        integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4="
+	        crossorigin="anonymous"
+	        async="async"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"
+	        integrity="sha256-t6SrqvTQmKoGgi5LOl0AUy+lBRtIvEJ+++pLAsfAjWs="
+	        crossorigin="anonymous"
+	        async="async"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-placeholder/2.3.1/jquery.placeholder.min.js"
+	        integrity="sha256-vo4hFjZ2XisF8ql7P6kGVCDAbuW68h6P2WunwD+QI54="
+	        crossorigin="anonymous"
+	        async="async"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"
+	        integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8="
+	        crossorigin="anonymous"
+	        async="async"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"
+	        integrity="sha256-uZbIqasulk7Y9yEwknbeQ0FpF3aUhtPwuggbpvQaI8Y="
+	        crossorigin="anonymous"
+	        async="async"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"
+	        integrity="sha256-TY/EO/++Ug/P+fSBjaqlmtuphCBKwlP7TOnS+SGnN8g="
+	        crossorigin="anonymous"
+	        async="async"></script>
+
+	<script src="{{ site.baseurl }}/js/toc.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('#toc').toc({
+			headers: 'h2, h3',
+			listClasses: 'nav nav-pills nav-stacked'
+		});
+	});
+	</script>
+
 </head>
 <body>
 
+<div id="main-wrapper">
 
-<!-- Nav Bar -->
+	<!-- Nav Bar -->
+	<nav class="navbar navbar-default" data-topbar>
+		<div class="container-fluid">
 
-<nav class="navbar navbar-default" data-topbar>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-top" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="nav-top">
+				<ul class="nav navbar-nav">
+
+					<li role="presentation">
+						<a href="{{ site.baseurl }}/about">About Me</a>
+					</li>
+
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+	<!-- End Nav -->
+
 	<div class="container-fluid">
 
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-top" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
-		</div>
+		<aside class="col-md-3 col-lg-2">
+			<div class="row">
 
-		<div class="collapse navbar-collapse" id="nav-top">
-			<ul class="nav navbar-nav">
+				<nav class="col-xs-12 col-sm-4 col-md-12">
+					<h4>Contents</h4>
+					<div id="toc"></div>
+				</nav>
 
-				<li role="presentation">
-					<a href="{{ site.baseurl }}/about">About Me</a>
-				</li>
+				<section class="col-xs-12 col-sm-4 col-md-12">
+					<h4>Flair</h4>
+					<a href="https://stackexchange.com/users/18122" class="panel">
+						<img src="https://stackexchange.com/users/flair/18122.png?theme=clean"
+						     width="208" height="58" alt="Tzrlk on Stackexchange"/>
+					</a>
+				</section>
 
-			</ul>
-		</div>
+			</div>
+		</aside>
+
+		<main class="col-md-9 col-lg-10" role="content">
+			<div style="max-width: 970px;">
+
+				{{ content }}
+
+			</div>
+		</main>
 
 	</div>
-</nav>
-<!-- End Nav -->
 
-
-<div class="container-fluid">
-
-	<aside class="col-md-3 col-lg-2">
+	<footer class="container-fluid">
 		<div class="row">
+			<div class="col-xs-12">
 
-			<nav class="col-xs-12 col-sm-4 col-md-12">
-				<h4>Contents</h4>
-				<div id="toc"></div>
-			</nav>
+				<hr style="border-color: lightgray; margin: 3px auto;"/>
 
-			<section class="col-xs-12 col-sm-4 col-md-12">
-				<h4>Flair</h4>
-				<a href="https://stackexchange.com/users/18122" class="panel">
-					<img src="https://stackexchange.com/users/flair/18122.png?theme=clean"
-					     width="208" height="58" alt="Tzrlk on Stackexchange"/>
-				</a>
-			</section>
+				<ol class="breadcrumb">
+					<li><a href="http://aetheric.co.nz/">Aetheric Engineering</a></li>
+					<li><a href="{{ site.baseurl }}">Tzrlk</a></li>
+					<li class="active">{{ page.title }}: {{ page.page-description }}</li>
+				</ol>
 
+			</div>
 		</div>
-	</aside>
-
-	<main class="col-md-9 col-lg-10" role="content">
-		<div class="container" style="margin-left: 0;">
-
-			{{ content }}
-
-		</div>
-	</main>
+	</footer>
 
 </div>
-
-
-<footer class="container-fluid">
-	<div class="col-xs-12">
-		<div class="row">
-
-			<ol class="breadcrumb">
-				<li><a href="http://aetheric.co.nz/">Aetheric Engineering</a></li>
-				<li><a href="{{ site.baseurl }}">Tzrlk</a></li>
-				<li class="active">{{ page.title }}: {{ page.page-description }}</li>
-			</ol>
-
-		</div>
-	</div>
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-
-<!-- Polyfills -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
-        integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4="
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"
-        integrity="sha256-t6SrqvTQmKoGgi5LOl0AUy+lBRtIvEJ+++pLAsfAjWs="
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-placeholder/2.3.1/jquery.placeholder.min.js"
-        integrity="sha256-vo4hFjZ2XisF8ql7P6kGVCDAbuW68h6P2WunwD+QI54="
-        crossorigin="anonymous"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8="
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"
-        integrity="sha256-uZbIqasulk7Y9yEwknbeQ0FpF3aUhtPwuggbpvQaI8Y="
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"
-        integrity="sha256-TY/EO/++Ug/P+fSBjaqlmtuphCBKwlP7TOnS+SGnN8g="
-        crossorigin="anonymous"></script>
-
-<script src="{{ site.baseurl }}/js/toc.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-	$('#toc').toc({
-		headers: 'h2, h3',
-		listClasses: 'nav nav-pills nav-stacked'
-	});
-});
-</script>
 
 </body>
 </html>

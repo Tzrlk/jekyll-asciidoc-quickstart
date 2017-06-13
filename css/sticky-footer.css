@@ -1,0 +1,18 @@
+html, body {
+	height: 100%;
+}
+
+#main-wrapper {
+	position: relative;
+	padding: 0 0 64px;
+	min-height: 100%;
+	margin: 0;
+}
+
+#main-wrapper > footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 64px;
+}
