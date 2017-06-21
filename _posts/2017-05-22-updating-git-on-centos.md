@@ -5,7 +5,11 @@ tags:
   - sysops
   - linux
   - centos
+categories:
+  - tech
+  - sysops
 date: 2017-05-22T00:00:00.000Z
+thumbnail: null
 published: true
 ---
 
