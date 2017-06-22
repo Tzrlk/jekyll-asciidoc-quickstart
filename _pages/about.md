@@ -28,6 +28,13 @@ I'm also a tabletop RPG gamer, LARPer, and computer gamer. I regularly go clay p
 * [Mastodon]
 * [Github]
 
+</section>
+
+<section markdown="1">
+
+## Other Places
+
+* [Rancher Forums]
 
 </section>
 
@@ -118,6 +125,9 @@ I'm also a tabletop RPG gamer, LARPer, and computer gamer. I regularly go clay p
 
 [Github]: https://github.com/tzrlk
 {: itemprop="sameAs" title="Tzrlk" }
+
+[Rancher Forums]: https://forums.rancher.com/u/tzrlk
+{: itemprop="sameAs" title="/u/tzrlk" }
 
 [portrait]: /img/portrait_01.jpg
 {: height="150px" width="100px" title="Peter Cummuskey" style="float:right" }
