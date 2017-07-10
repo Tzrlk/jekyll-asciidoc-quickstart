@@ -9,7 +9,7 @@ categories:
   - dnd
 date: 2017-07-10T06:44:45.831Z
 thumbnail: /img/dnd-binder.jpg
-published: 'false'
+published: true
 ---
 I've been playing a [Binder][1] in one of my DnD5 games as one side of my gestalt character (the other is Barbarian). One of the problems I've identified is the same as all the content that came out of 3.5's [Tome of Magic][2]: structural design flaws.
 
@@ -42,3 +42,4 @@ As with most of my game design thoughts, this needs way more work before it can 
 [2]: https://en.wikipedia.org/wiki/Tome_of_Magic
 
 [3]: https://en.wikipedia.org/wiki/Shadowrun
+
