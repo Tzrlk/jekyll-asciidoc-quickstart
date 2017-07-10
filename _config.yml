@@ -1,12 +1,12 @@
-title: Tzrlk
-name: Tzrlk @ Aetheric
-url: http://tzrlk.aetheric.co.nz/
+title:       Tzrlk
+name:        Tzrlk @ Aetheric
+url:         http://tzrlk.aetheric.co.nz/
 description: The personal site of Peter Cummuskey
-author: Peter Cummuskey
-timezone: 'Pacific/Auckland'
+author:      Peter Cummuskey
+timezone:    'Pacific/Auckland'
 
-safe: false
-markdown: kramdown
+safe:        false
+markdown:    kramdown
 incremental: true
 
 include:
@@ -36,3 +36,4 @@ defaults:
     values:
       layout: 'post'
       root: ../../../
+
