@@ -5,21 +5,31 @@ author: 'Peter Cummuskey'
 <div class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
 	<header class="post-header">
-		<h1 class="post-title" itemprop="name">{{ page.title }}</h1>
-		<p class="post-meta">
-			<meta itemprop="keywords" content="{{ post.tags | join: ',' }}" />
-			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
-				<a href="{{ site.baseurl }}/about" rel="author" itemprop="url">Peter Cummuskey</a>
-			</span>
-			<span class="hyphen">-</span>
-			<time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">
-				{{ page.date | date: "%b %-d, %Y" }}
-			</time>
-		</p>
+		<div class="page-header" style="border-bottom-color: lightgray; vertical-align: text-bottom">
+		
+			<p class="post-meta pull-right">
+				<meta itemprop="keywords" content="{{ page.tags | join: ',' }}" />
+				<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+					<a href="{{ site.baseurl }}/about" rel="author" itemprop="url">Peter Cummuskey</a>
+				</span>
+				<span class="hyphen">-</span>
+				<time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">
+					{{ page.date | date: "%b %-d, %Y" }}
+				</time>
+			</p>
+
+			<h1 class="post-title" itemprop="name">{{ page.title }}</h1>
+
+		</div>
+
 	</header>
 
 	<article class="post-content" itemprop="articleBody">
+
+		<img src="{{ page.thumbnail }}" align="right"/>
+
 		{{ content }}
+
 	</article>
 
 </div>
