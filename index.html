@@ -9,16 +9,20 @@ layout: page
 		<div class="col-xs-12">
 			<article class="media" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
-				{% if post.image %}
+				{% if post.thumbnail %}
 					<div class="media-left">
-						<img class="media-object" src="{{ post.image }}" alt="{{ page.title }}"/>
+						<img class="media-object"
+						     src="{{ post.thumbnail }}"
+							 alt="{{ page.title }}"
+							 style="max-width: 150px; max-height: 200px;" />
 					</div>
 				{% endif %}
 
 				<div class="media-body">
 
-					<p class="post-meta pull-right">
-						[ <span itemprop="keywords">{{ post.tags | join: ', ' }}</span> ]
+					<p class="post-meta pull-right" align="right">
+						[ <span itemprop="keywords">{{ post.tags | join: ', ' }}</span> ]</br>
+						<span>{{ post.categories | join: ' / ' }}</span></br>
 						<time itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">
 							{{ post.date | date: "%-d %b, %Y" }}
 						</time>
