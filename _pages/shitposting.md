@@ -1,11 +1,24 @@
 ---
-layout:    page
-title:     Shitposting Highlights
+layout: page
+title: Shitposting Highlights
 published: false
 ---
 
+Here's some of my favourite crap from the internet.
+
+## Hilarious
+
+{% for item in page.items.hilarious %}
+
+	<div class="col-md-6">
+		<a href="{{ item.source }}" class="thumbnail">
+			//todo
+		</a>
+	</div>
+
+{% endfor %}
+
 <div class="row">
-	<h2>Hilarious</h2>
 
 	<div class="col-md-6">
 		<a href="https://np.reddit.com/r/ofcoursethatsathing/comments/6gawx1/a_slap_contest/" class="thumbnail">
@@ -150,3 +163,4 @@ published: false
 	</div>
 
 </div>
+
