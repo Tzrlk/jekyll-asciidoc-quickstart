@@ -8,7 +8,7 @@ tags:
 categories: null
 date: 2017-11-02T22:42:54.488Z
 thumbnail: null
-published: 'false'
+published: true
 ---
 I just managed to get a Linux GUI app running on my windows desktop without the need for a virtual machine. This must seem old-hat to Linux pros, but damn it opens up a world of possibilities.
 
@@ -34,3 +34,4 @@ While my example has been done with Docker, doing exactly the same for a linux d
 [2]: https://github.com/moby/moby/issues/8710#issuecomment-135109677
 [3]: https://sourceforge.net/projects/xming/
 [4]: https://chocolatey.org/packages/xming
+
