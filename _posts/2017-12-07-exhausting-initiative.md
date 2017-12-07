@@ -3,7 +3,9 @@ layout: post
 title: Exhausting Initiative
 tags:
   - rpg mechanics
-categories: null
+categories:
+  - design
+  - rpg
 date: 2017-12-07T03:05:14.267Z
 thumbnail: null
 published: true
@@ -60,3 +62,4 @@ Some articles that inspired me:
 [2]: https://rpg.stackexchange.com/q/11508/3027
 [3]: https://www.reddit.com/r/rpg/comments/5podmc/discussion_gaining_initiative_the_combat_of/
 [4]: http://celtricia.pbworks.com/w/page/14955668/Initiative
+
